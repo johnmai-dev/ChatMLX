@@ -15,6 +15,8 @@ struct MLXProvider: View {
 
     let maxRAM = ProcessInfo.processInfo.physicalMemory / (1024 * 1024)
 
+    @Default(.enableGPUMemorySettings) var enableGPUMemorySettings
+
     @Default(.gpuCacheLimit) var gpuCacheLimit
 
     @Default(.gpuMemoryLimit) var gpuMemoryLimit
@@ -44,34 +46,75 @@ struct MLXProvider: View {
 
     @ViewBuilder
     func Content() -> some View {
-        LabeledContent("GPU Cache Limit") {
-            CompactSlider(
-                value: $gpuCacheLimit.asDouble(), in: 0 ... Double(maxRAM), step: 128
-            ) {
-                Text("\(Int(gpuCacheLimit))MB")
-                    .foregroundStyle(.white)
+        LabeledContent("Enable GPU Memory Settings") {
+            Toggle("", isOn: $enableGPUMemorySettings)
+                .labelsHidden()
+                .toggleStyle(.switch)
+        }
+
+        if enableGPUMemorySettings {
+            LabeledContent("GPU Cache Limit") {
+                CompactSlider(
+                    value: $gpuCacheLimit.asDouble(), in: 0 ... Double(maxRAM), step: 128
+                ) {
+                    Text("\(Int(gpuCacheLimit))MB")
+                        .foregroundStyle(.white)
+                }
+                .frame(width: 200)
+                .onChange(of: gpuCacheLimit) { oldValue, newValue in
+                    if oldValue != newValue {
+                        runner.loadState = .idle
+                    }
+                }
             }
-            .frame(width: 200)
-            .onChange(of: gpuCacheLimit) { oldValue, newValue in
-                if oldValue != newValue {
-                    runner.loadState = .idle
+
+            LabeledContent("GPU Memory Limit") {
+                CompactSlider(
+                    value: $gpuMemoryLimit.asDouble(), in: 0 ... Double(maxRAM), step: 128
+                ) {
+                    Text("\(Int(gpuMemoryLimit))MB")
+                        .foregroundStyle(.white)
+                }
+                .frame(width: 200)
+                .onChange(of: gpuMemoryLimit) { oldValue, newValue in
+                    if oldValue != newValue {
+                        runner.loadState = .idle
+                    }
                 }
             }
         }
 
-        LabeledContent("GPU Memory Limit") {
-            CompactSlider(
-                value: $gpuMemoryLimit.asDouble(), in: 0 ... Double(maxRAM), step: 128
-            ) {
-                Text("\(Int(gpuMemoryLimit))MB")
-                    .foregroundStyle(.white)
+        LabeledContent("Model List") {
+            List {
+                item()
+                item()
+                item()
+                item()
+                item()
+                item()
             }
-            .frame(width: 200)
-            .onChange(of: gpuMemoryLimit) { oldValue, newValue in
-                if oldValue != newValue {
-                    runner.loadState = .idle
-                }
+            .listStyle(.plain)
+            .scrollIndicators(.hidden)
+            .frame(height: 200)
+            .scrollContentBackground(.hidden)
+        }
+        .labeledContentStyle(.vertical)
+    }
+
+    @MainActor
+    @ViewBuilder
+    private func item() -> some View {
+        VStack {
+            HStack {
+                Text("model.name")
+                Spacer()
             }
         }
+        .padding()
+        .background(.black.opacity(0.3))
+        .listRowSeparator(.hidden)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(color: .black, radius: 2)
+        .listRowInsets(EdgeInsets(top: 0, leading: -5, bottom: 10, trailing: -5))
     }
 }

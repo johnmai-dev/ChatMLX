@@ -20,3 +20,17 @@ struct HorizontalLabeledContentStyle: LabeledContentStyle {
 extension LabeledContentStyle where Self == HorizontalLabeledContentStyle {
     static var horizontal: HorizontalLabeledContentStyle { .init() }
 }
+
+
+struct VerticalLabeledContentStyle: LabeledContentStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack(alignment:.leading) {
+            configuration.label
+            configuration.content
+        }
+    }
+}
+
+extension LabeledContentStyle where Self == VerticalLabeledContentStyle {
+    static var vertical: VerticalLabeledContentStyle { .init() }
+}

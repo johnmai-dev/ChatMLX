@@ -24,8 +24,10 @@ class LLMRunner {
         case loaded(ModelContainer)
     }
 
+    @ObservationIgnored
     var loadState: LoadState = .idle
 
+    @ObservationIgnored
     var modelConfiguration: ModelConfiguration?
 
     var gpuActiveMemory: Int = 0

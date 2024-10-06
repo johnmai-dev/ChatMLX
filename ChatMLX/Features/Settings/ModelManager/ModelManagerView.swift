@@ -10,12 +10,15 @@ struct ModelManagerView: View {
     @State var isMLXExpanded: Bool = true
 
     var body: some View {
-        VStack {
-            MLXProvider()
-            OpenAIProvider()
-            Spacer()
+        ScrollView {
+            LazyVStack {
+                MLXProvider()
+                OpenAIProvider()
+                
+            }
+            .padding()
         }
-        .padding()
+        
         .ultramanNavigationTitle("Model Manager")
     }
 }

@@ -602,6 +602,9 @@
         }
       }
     },
+    "Enable GPU Memory Settings" : {
+
+    },
     "Endpoint" : {
       "localizations" : {
         "ja" : {
@@ -1130,6 +1133,9 @@
         }
       }
     },
+    "Model List" : {
+
+    },
     "Model Manager" : {
 
     },
@@ -1188,6 +1194,9 @@
           }
         }
       }
+    },
+    "model.name" : {
+
     },
     "Models" : {
       "extractionState" : "manual",

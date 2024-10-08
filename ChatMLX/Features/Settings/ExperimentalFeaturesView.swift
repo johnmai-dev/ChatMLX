@@ -18,18 +18,14 @@ struct ExperimentalFeaturesView: View {
     var body: some View {
         VStack(spacing: 18) {
             LuminareSection("Window Appearance") {
-                HStack {
-                    Text("Apple Intelligence Effect")
-                    Spacer()
+                LabeledContent("Apple Intelligence Effect") {
                     Toggle("", isOn: $enableAppleIntelligenceEffect)
                         .toggleStyle(.switch)
                 }
                 .padding(6)
 
                 if enableAppleIntelligenceEffect {
-                    HStack {
-                        Text("Display Mode")
-                        Spacer()
+                    LabeledContent("Display Mode") {
                         Picker(
                             "Display Mode",
                             selection: $appleIntelligenceEffectDisplay
@@ -46,6 +42,8 @@ struct ExperimentalFeaturesView: View {
                     .padding(8)
                 }
             }
+            .labeledContentStyle(.horizontal)
+
             Spacer()
         }
         .ultramanToolbar(alignment: .trailing) {

@@ -15,6 +15,8 @@ struct ConversationSidebarItem: View {
 
     @State private var isActive: Bool = false
 
+    let persistence = PersistenceController.shared
+
     var body: some View {
         Button(action: selectConversation) {
             VStack(alignment: .leading, spacing: 4) {
@@ -29,7 +31,7 @@ struct ConversationSidebarItem: View {
                     Spacer()
 
                     if !(conversation.isFault || conversation.isDeleted) {
-                        Text(conversation.updatedAt.toFormatted())
+                        Text(conversation.updatedAt?.toFormatted() ?? "")
                             .font(.caption)
                     }
                 }
@@ -59,7 +61,10 @@ struct ConversationSidebarItem: View {
 
     private func deleteConversation() {
         do {
-            try PersistenceController.shared.delete(conversation)
+            try persistence.delete(conversation.objectID, in: viewContext)
+            if vm.selectedConversation == conversation {
+                vm.selectedConversation = nil
+            }
         } catch {
             vm.throwError(error, title: "Delete Conversation Failed")
         }

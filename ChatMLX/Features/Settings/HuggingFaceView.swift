@@ -29,9 +29,7 @@ struct HuggingFaceView: View {
                         placeholder: Text("Enter your Hugging Face token"),
                         alignment: .trailing
                     )
-                    .frame(height: 25)
                 }
-                .padding(5)
             }
 
             LuminareSection("Hugging Face Endpoint") {
@@ -49,12 +47,10 @@ struct HuggingFaceView: View {
                             "https://hf-mirror.com")
                     }
                 }
-                .padding(8)
 
                 LabeledContent("Use Custom Endpoint") {
                     Toggle("", isOn: $useCustomEndpoint)
                 }
-                .padding(8)
 
                 if useCustomEndpoint {
                     LabeledContent("Custom Endpoint") {
@@ -68,7 +64,6 @@ struct HuggingFaceView: View {
                             addCustomEndpoint()
                         }
                     }
-                    .padding(5)
 
                     if !customEndpoints.isEmpty {
                         List {

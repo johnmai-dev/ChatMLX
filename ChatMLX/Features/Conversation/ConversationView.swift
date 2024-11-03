@@ -40,7 +40,6 @@ struct ConversationView: View {
         }
     }
 
-    @MainActor
     @ViewBuilder
     private func detailView() -> some View {
         Group {

@@ -169,7 +169,7 @@ struct RightSidebarView: View {
 
                     if conversation.useSystemPrompt {
                         UltramanTextEditor(
-                            text: $conversation.systemPrompt,
+                            text: $conversation.systemPrompt.toUnwrapped(defaultValue: ""),
                             placeholder: "System prompt",
                             onSubmit: {}
                         )

@@ -14,28 +14,32 @@ import SwiftUI
 
 struct ConversationDetailView: View {
     @ObservedObject var conversation: Conversation
-
+    
     @Environment(LLMRunner.self) var runner
     @Environment(\.managedObjectContext) private var viewContext
-    @Environment(ConversationViewModel.self) private var vm
-
+    @Environment(ConversationViewModel.self) private var conversationViewModel
+    @Environment(ModelManagerViewModel.self) private var modelManagerViewModel
+    
     @State private var newMessage = ""
     @State private var showRightSidebar = false
     @State private var showInfoPopover = false
-    @State private var localModels: [LocalModel] = []
     @State private var displayStyle: DisplayStyle = .markdown
     @State private var isEditorFullScreen = false
     @State private var showToast = false
     @State private var toastMessage = ""
     @State private var toastType: AlertToast.AlertType = .regular
-    @State private var loading = true
     @State private var scrollViewProxy: ScrollViewProxy?
-
+    
     @FocusState private var isInputFocused: Bool
-
+    
     @Default(.enableAppleIntelligenceEffect) var enableAppleIntelligenceEffect
     @Default(.appleIntelligenceEffectDisplay) var appleIntelligenceEffectDisplay
-
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \ModelInfo.name, ascending: true)],
+        animation: .default
+    ) var models: FetchedResults<ModelInfo>
+    
     var body: some View {
         ZStack(alignment: .trailing) {
             VStack(spacing: 0) {
@@ -45,7 +49,7 @@ struct ConversationDetailView: View {
                 }
                 Editor()
             }
-
+            
             if showRightSidebar {
                 Color.black.opacity(0.00001)
                     .ignoresSafeArea()
@@ -54,33 +58,31 @@ struct ConversationDetailView: View {
                             showRightSidebar = false
                         }
                     }
-
+                
                 RightSidebarView(conversation: conversation)
             }
         }
-        .onAppear(perform: loadModels)
         .toast(isPresenting: $showToast, duration: 1.5, offsetY: 30) {
             AlertToast(
                 displayMode: .hud, type: toastType, title: toastMessage
             )
         }
         .ultramanNavigationTitle(
-            LocalizedStringKey(conversation.title)
+            conversation.title
         )
         .ultramanToolbar(alignment: .trailing) {
             Button(action: {
                 withAnimation {
                     showRightSidebar.toggle()
                 }
-
+                
             }) {
                 Image(systemName: "slider.horizontal.3")
             }
             .buttonStyle(.plain)
         }
     }
-
-    @MainActor
+    
     @ViewBuilder
     private func MessageBox() -> some View {
         ScrollViewReader { proxy in
@@ -107,18 +109,17 @@ struct ConversationDetailView: View {
             }
         }
     }
-
+    
     private func scrollToBottom() {
         guard let lastMessageId = conversation.messages.last?.id, let scrollViewProxy else {
             return
         }
-
+        
         withAnimation {
             scrollViewProxy.scrollTo(lastMessageId, anchor: .bottom)
         }
     }
-
-    @MainActor
+    
     @ViewBuilder
     private func EditorToolbar() -> some View {
         HStack {
@@ -129,13 +130,13 @@ struct ConversationDetailView: View {
             } label: {
                 Image(displayStyle == .markdown ? "plaintext" : "markdown")
             }
-
+            
             Button(action: {
                 conversation.messages = []
             }) {
                 Image("clear")
             }
-
+            
             Button {
                 withAnimation {
                     isEditorFullScreen.toggle()
@@ -147,9 +148,9 @@ struct ConversationDetailView: View {
                         : "arrow.up.left.and.arrow.down.right")
             }
             .help(isEditorFullScreen ? "Exit Full Screen" : "Enter Full Screen")
-
+            
             Spacer()
-
+            
             Button {
                 showInfoPopover.toggle()
             } label: {
@@ -175,21 +176,21 @@ struct ConversationDetailView: View {
                         Text("Prompt Time")
                             .fontWeight(.bold)
                     }
-
+                    
                     LabeledContent {
                         Text("\(Int(conversation.promptTokensPerSecond))")
                     } label: {
                         Text("Prompt Tokens/second")
                             .fontWeight(.bold)
                     }
-
+                    
                     LabeledContent {
                         Text(conversation.generateTime.formatted())
                     } label: {
                         Text("Generate Time")
                             .fontWeight(.bold)
                     }
-
+                    
                     LabeledContent {
                         Text("\(Int(conversation.tokensPerSecond))")
                     } label: {
@@ -200,30 +201,8 @@ struct ConversationDetailView: View {
                 .padding()
                 .background(.clear)
             }
-
-            Image(systemName: "circle.fill")
-                .controlSize(.mini)
-                .foregroundStyle(
-                    runner.modelConfiguration?.name == conversation.model
-                        ? .green : .red
-                )
-                .symbolEffect(.variableColor, isActive: runner.running)
-                .help("Model State")
-
-            Picker(
-                selection: $conversation.model,
-                label: Image(systemName: "brain")
-            ) {
-                if !loading {
-                    Text("Not selected").tag("")
-                    ForEach(localModels, id: \.id) { model in
-                        Text(model.name)
-                            .tag(model.origin)
-                    }
-                }
-            }
-            .pickerStyle(.menu)
-            .labelsHidden()
+            
+            ModelPicker(selection: $conversation.model)
         }
         .buttonStyle(.borderless)
         .foregroundStyle(.white)
@@ -231,13 +210,12 @@ struct ConversationDetailView: View {
         .frame(height: 35)
         .padding(.horizontal, 10)
     }
-
-    @MainActor
+    
     @ViewBuilder
     private func Editor() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             EditorToolbar()
-
+            
             ZStack(alignment: .bottom) {
                 UltramanTextEditor(
                     text: $newMessage,
@@ -245,7 +223,7 @@ struct ConversationDetailView: View {
                     onSubmit: sendMessage
                 )
                 .padding(.horizontal, 5)
-
+                
                 HStack(spacing: 16) {
                     Spacer()
                     Button("Clear") {
@@ -253,7 +231,7 @@ struct ConversationDetailView: View {
                     }
                     .buttonStyle(.borderless)
                     .disabled(newMessage.isEmpty)
-
+                    
                     Button {
                         sendMessage()
                     } label: {
@@ -283,86 +261,77 @@ struct ConversationDetailView: View {
             .frame(maxHeight: isEditorFullScreen ? .infinity : 150)
         }
     }
-
+    
     private func sendMessage() {
+        guard !conversation.inferring else {
+            return
+        }
+        
         let trimmedMessage = newMessage.trimmingCharacters(
             in: .whitespacesAndNewlines)
         guard !trimmedMessage.isEmpty else { return }
-
-        if conversation.model.isEmpty {
-            showToastMessage("Please select a model", type: .error(Color.red))
+        
+        guard let model = conversation.model else {
+            showToastMessage("Please select a model", type: .error(.red))
             return
         }
-
+        
         newMessage = ""
         isInputFocused = false
-
+        
         Message(context: viewContext).user(content: trimmedMessage, conversation: conversation)
-
+        
         if enableAppleIntelligenceEffect, appleIntelligenceEffectDisplay == .global {
             AppleIntelligenceEffectManager.shared.setupEffect()
         }
-
-        runner.generate(conversation: conversation, in: viewContext) {
-            Task { @MainActor in
-                scrollToBottom()
-            }
-        } completion: {
-            Task { @MainActor in
-                if enableAppleIntelligenceEffect, appleIntelligenceEffectDisplay == .global {
-                    AppleIntelligenceEffectManager.shared.closeEffect()
-                }
-                scrollToBottom()
-            }
-        }
-    }
-
-    private func loadModels() {
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(
-            for: .documentDirectory, in: .userDomainMask
-        )[0]
-        let modelsURL = documentsURL.appendingPathComponent(
-            "huggingface/models")
-
-        do {
-            let contents = try fileManager.contentsOfDirectory(
-                at: modelsURL, includingPropertiesForKeys: nil,
-                options: [.skipsHiddenFiles]
-            )
-            var models: [LocalModel] = []
-
-            for groupURL in contents {
-                if groupURL.hasDirectoryPath {
-                    let modelContents = try fileManager.contentsOfDirectory(
-                        at: groupURL, includingPropertiesForKeys: nil,
-                        options: [.skipsHiddenFiles]
+        
+        conversation.inferring = true
+        
+        let factory = ProviderFactory.shared
+        
+        let assistantMessage = conversation.getLastAssistantMessage(context: viewContext)
+        assistantMessage.inferring = true
+        let messages = conversation.prepareMessages()
+        
+#if DEBUG
+        print(messages)
+#endif
+        
+        Task {
+            let provider = await factory.provider(.openAI)
+            await provider.chat(
+                messages: messages,
+                config: .init(
+                    model: .init(
+                        name: "model.name",
+                        path: model.path
                     )
-
-                    for modelURL in modelContents {
-                        if modelURL.hasDirectoryPath {
-                            models.append(
-                                LocalModel(
-                                    group: groupURL.lastPathComponent,
-                                    name: modelURL.lastPathComponent,
-                                    url: modelURL
-                                )
-                            )
-                        }
+                )
+            ) { result in
+                switch result {
+                case .success(let response):
+                    Task { @MainActor in
+                        assistantMessage.content = response.content
+                    }
+                case .failure(let error):
+                    Task { @MainActor in
+                        assistantMessage.error = error.localizedDescription
                     }
                 }
             }
-
-            if !models.contains(where: { $0.origin == conversation.model }) {
-                conversation.model = ""
+            
+            await MainActor.run {
+                conversation.inferring = false
+                assistantMessage.inferring = false
             }
-
-            Task { @MainActor in
-                localModels = models
-                loading = false
+            
+            if enableAppleIntelligenceEffect, appleIntelligenceEffectDisplay == .global {
+                AppleIntelligenceEffectManager.shared.closeEffect()
             }
-        } catch {
-            vm.throwError(error, title: "Load Models Failed")
+            
+            if viewContext.hasChanges {
+                try? viewContext.save()
+            }
         }
     }
 

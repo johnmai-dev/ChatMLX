@@ -22,7 +22,6 @@ struct ExperimentalFeaturesView: View {
                     Toggle("", isOn: $enableAppleIntelligenceEffect)
                         .toggleStyle(.switch)
                 }
-                .padding(6)
 
                 if enableAppleIntelligenceEffect {
                     LabeledContent("Display Mode") {
@@ -39,7 +38,6 @@ struct ExperimentalFeaturesView: View {
                         .foregroundStyle(.white)
                         .tint(.white)
                     }
-                    .padding(8)
                 }
             }
             .labeledContentStyle(.horizontal)

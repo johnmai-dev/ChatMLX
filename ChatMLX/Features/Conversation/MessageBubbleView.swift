@@ -36,7 +36,6 @@ struct MessageBubbleView: View {
         }
     }
 
-    @MainActor
     @ViewBuilder
     private var assistantMessageView: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -87,7 +86,7 @@ struct MessageBubbleView: View {
                     .disabled(runner.running)
 
                     if !(message.isFault || message.isDeleted) {
-                        Text(message.updatedAt.toTimeFormatted())
+                        Text(message.updatedAt?.toTimeFormatted() ?? "")
                             .font(.caption)
                     }
 
@@ -108,7 +107,6 @@ struct MessageBubbleView: View {
         }
     }
 
-    @MainActor
     @ViewBuilder
     private var userMessageView: some View {
         VStack(alignment: .trailing) {
@@ -119,7 +117,7 @@ struct MessageBubbleView: View {
                 .cornerRadius(8)
 
             HStack {
-                Text(message.updatedAt.toTimeFormatted())
+                Text(message.updatedAt?.toTimeFormatted() ?? "")
                     .font(.caption)
 
                 Button(action: copyText) {
@@ -160,16 +158,55 @@ struct MessageBubbleView: View {
     private func regenerate() {
         guard message.role == .assistant else { return }
 
-        Task {
-            let conversation = message.conversation
+        let conversation = message.conversation
 
-            if conversation.messages.last != message {
-                for message in message.suffixMessages() {
-                    viewContext.delete(message)
+        if conversation.messages.last != message {
+            for message in message.suffixMessages() {
+                viewContext.delete(message)
+            }
+        }
+        guard let model = conversation.model else {
+            return
+        }
+        
+        conversation.inferring = true
+
+        let factory = ProviderFactory.shared
+
+        let assistantMessage = conversation.getLastAssistantMessage(context: viewContext)
+        assistantMessage.inferring = true 
+        let messages = conversation.prepareMessages()
+
+        Task {
+            let provider = await factory.provider(model.provider)
+            await provider.chat(
+                messages: messages,
+                config: .init(
+                    model: .init(
+                        name: "",
+                        path: model.path
+                    )
+                )
+            ) { result in
+                switch result {
+                case .success(let response):
+                    Task { @MainActor in
+                        assistantMessage.content = response.content
+                    }
+                case .failure(let error):
+                    Task { @MainActor in
+                        assistantMessage.error = error.localizedDescription
+                    }
                 }
             }
+
             await MainActor.run {
-                runner.generate(conversation: conversation, in: viewContext, completion: nil)
+                conversation.inferring = false
+                assistantMessage.inferring = false
+            }
+
+            if viewContext.hasChanges {
+                try? viewContext.save()
             }
         }
     }

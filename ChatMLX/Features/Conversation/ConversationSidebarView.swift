@@ -35,7 +35,6 @@ struct ConversationSidebarView: View {
         .background(.black.opacity(0.4))
     }
 
-    @MainActor
     @ViewBuilder
     private func headerView() -> some View {
         HStack {
@@ -52,7 +51,6 @@ struct ConversationSidebarView: View {
         .buttonStyle(.plain)
     }
 
-    @MainActor
     @ViewBuilder
     private func logoView() -> some View {
         HStack {
@@ -67,7 +65,6 @@ struct ConversationSidebarView: View {
         }
     }
 
-    @MainActor
     @ViewBuilder
     private func searchField() -> some View {
         LuminareSection {
@@ -81,7 +78,6 @@ struct ConversationSidebarView: View {
         .padding(.horizontal, padding)
     }
 
-    @MainActor
     @ViewBuilder
     private func conversationList() -> some View {
         ScrollView {

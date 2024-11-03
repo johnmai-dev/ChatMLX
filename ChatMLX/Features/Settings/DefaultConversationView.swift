@@ -12,7 +12,8 @@ import SwiftUI
 
 struct DefaultConversationView: View {
     @Default(.defaultTitle) var defaultTitle
-    @Default(.defaultModel) var defaultModel
+//    @Default(.defaultModel) var defaultModel
+    @State var defaultModel: ModelInfo?
     @Default(.defaultTemperature) var defaultTemperature
     @Default(.defaultTopP) var defaultTopP
     @Default(.defaultMaxLength) var defaultMaxLength
@@ -24,6 +25,8 @@ struct DefaultConversationView: View {
     @Default(.defaultUseMaxLength) var defaultUseMaxLength
     @Default(.defaultUseSystemPrompt) var defaultUseSystemPrompt
     @Default(.defaultSystemPrompt) var defaultSystemPrompt
+
+    @Default(.defaultProvider) var defaultProvider
 
     @State private var localModels: [LocalModel] = []
 
@@ -39,24 +42,17 @@ struct DefaultConversationView: View {
                         $defaultTitle,
                         placeholder: Text("Default conversation title")
                     )
-                    .frame(height: 25)
+                    .frame(minHeight: 35)
                 }
 
                 LuminareSection("Model Settings") {
-                    LabeledContent("Model") {
-                        Picker(
-                            selection: $defaultModel,
-                            label: Image(systemName: "brain")
-                        ) {
-                            if !localModels.isEmpty {
-                                Text("Not selected").tag("")
-                                ForEach(localModels, id: \.id) { model in
-                                    Text(model.name).tag(model.origin)
-                                }
-                            }
-                        }
+                    LabeledContent("Provider") {
+                        DefaultProviderPicker(provider: $defaultProvider)
                     }
-                    .padding(padding)
+
+                    LabeledContent("Model") {
+                        DefaultModelPicker(provider: $defaultProvider)
+                    }
 
                     LabeledContent("Temperature") {
                         CompactSlider(
@@ -67,7 +63,6 @@ struct DefaultConversationView: View {
                         }
                         .frame(width: 200)
                     }
-                    .padding(padding)
 
                     LabeledContent("Top P") {
                         CompactSlider(
@@ -78,12 +73,10 @@ struct DefaultConversationView: View {
                         }
                         .frame(width: 200)
                     }
-                    .padding(padding)
 
                     LabeledContent("Use Max Length") {
                         Toggle("", isOn: $defaultUseMaxLength)
                     }
-                    .padding(padding)
 
                     if defaultUseMaxLength {
                         LabeledContent("Max Length") {
@@ -95,7 +88,6 @@ struct DefaultConversationView: View {
                             }
                             .frame(width: 200)
                         }
-                        .padding(padding)
                     }
 
                     LabeledContent("Repetition Context Size") {
@@ -107,12 +99,10 @@ struct DefaultConversationView: View {
                         }
                         .frame(width: 200)
                     }
-                    .padding(padding)
 
                     LabeledContent("Use Repetition Penalty") {
                         Toggle("", isOn: $defaultUseRepetitionPenalty)
                     }
-                    .padding(padding)
 
                     if defaultUseRepetitionPenalty {
                         LabeledContent("Repetition Penalty") {
@@ -127,7 +117,6 @@ struct DefaultConversationView: View {
                             }
                             .frame(width: 200)
                         }
-                        .padding(padding)
                     }
                 }
 
@@ -135,7 +124,6 @@ struct DefaultConversationView: View {
                     LabeledContent("Use Max Messages Limit") {
                         Toggle("", isOn: $defaultUseMaxMessagesLimit)
                     }
-                    .padding(padding)
 
                     if defaultUseMaxMessagesLimit {
                         LabeledContent("Max Messages Limit") {
@@ -147,7 +135,6 @@ struct DefaultConversationView: View {
                             }
                             .frame(width: 200)
                         }
-                        .padding(padding)
                     }
                 }
 
@@ -155,7 +142,6 @@ struct DefaultConversationView: View {
                     LabeledContent("Use System Prompt") {
                         Toggle("", isOn: $defaultUseSystemPrompt)
                     }
-                    .padding(padding)
 
                     if defaultUseSystemPrompt {
                         UltramanTextEditor(
@@ -164,7 +150,6 @@ struct DefaultConversationView: View {
                             onSubmit: {}
                         )
                         .frame(height: 100)
-                        .padding(padding)
                     }
                 }
 
@@ -180,7 +165,6 @@ struct DefaultConversationView: View {
         .labelsHidden()
         .buttonStyle(.borderless)
         .foregroundStyle(.white)
-        .tint(.white)
         .toggleStyle(.switch)
     }
 
@@ -219,10 +203,10 @@ struct DefaultConversationView: View {
                     }
                 }
             }
-
-            if !models.contains(where: { $0.origin == defaultModel }) {
-                defaultModel = ""
-            }
+//
+//            if !models.contains(where: { $0.origin == defaultModel }) {
+//                defaultModel = ""
+//            }
 
             Task { @MainActor in
                 localModels = models

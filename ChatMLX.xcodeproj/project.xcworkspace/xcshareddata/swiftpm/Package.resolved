@@ -1,5 +1,5 @@
 {
-  "originHash" : "91755e46d4857336740696612733433e7fa7ef978bc35290de8f756037756422",
+  "originHash" : "abfff542bc4df674e107b815bb2eb68cf14edf79991cd6e62fb3c1d42a5ffa1a",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "abe4d1df6f0c85dcb133266cc07c2a5d08295726",
         "version" : "1.1.6"
+      }
+    },
+    {
+      "identity" : "coredataevolution",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fatbobman/CoreDataEvolution.git",
+      "state" : {
+        "revision" : "5ef939b16ca5f95a132458e4e14a81d8bf452390",
+        "version" : "0.3.1"
       }
     },
     {
@@ -69,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ml-explore/mlx-swift",
       "state" : {
-        "revision" : "78a7cfe6701d6e9c88e9d4a0d1f7990af84b2146",
-        "version" : "0.18.0"
+        "revision" : "d649c62b77c487c25012910b0d02b30283d388ca",
+        "version" : "0.18.1"
       }
     },
     {
@@ -92,6 +101,15 @@
       }
     },
     {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "state" : {
+        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
+        "version" : "0.3.0"
+      }
+    },
+    {
       "identity" : "splash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/johnsundell/splash.git",
@@ -110,15 +128,6 @@
       }
     },
     {
-      "identity" : "swift-log",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-log",
-      "state" : {
-        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
-        "version" : "1.6.1"
-      }
-    },
-    {
       "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui.git",
@@ -134,6 +143,15 @@
       "state" : {
         "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
         "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
       }
     },
     {

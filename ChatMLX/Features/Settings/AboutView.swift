@@ -25,7 +25,7 @@ struct AboutView: View {
                 .fontWeight(.bold)
 
             Text(
-                "Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown")"
+                "Version \(getVersion())"
             )
             .font(.subheadline)
             .foregroundColor(.white)

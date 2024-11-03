@@ -26,6 +26,8 @@ struct GeneralView: View {
 
     let maxRAM = ProcessInfo.processInfo.physicalMemory / (1024 * 1024)
 
+    let persistenceController = PersistenceController.shared
+
     var body: some View {
         VStack(spacing: 18) {
             LuminareSection("Language") {
@@ -42,7 +44,6 @@ struct GeneralView: View {
                     .foregroundStyle(.white)
                     .tint(.white)
                 }
-                .padding(8)
             }
 
             LuminareSection("Window Appearance") {
@@ -54,12 +55,10 @@ struct GeneralView: View {
                     .frame(width: 200)
                     .compactSliderSecondaryColor(.white)
                 }
-                .padding(5)
 
                 LabeledContent("Color") {
                     ColorPicker("", selection: $backgroundColor)
                 }
-                .padding(5)
             }
 
             LuminareSection("System Settings") {
@@ -83,22 +82,24 @@ struct GeneralView: View {
     }
 
     private func clearAllConversations() {
-        do {
-            let persistenceController = PersistenceController.shared
+        let context = persistenceController.newBackgroundContext()
 
-            let messageObjectIds = try persistenceController.clear("Message")
-            let conversationObjectIds = try persistenceController.clear("Conversation")
-
-            NSManagedObjectContext.mergeChanges(
-                fromRemoteContextSave: [
-                    NSDeletedObjectsKey: messageObjectIds + conversationObjectIds
-                ],
-                into: [persistenceController.container.viewContext]
-            )
-
-            conversationViewModel.selectedConversation = nil
-        } catch {
-            vm.throwError(error, title: "Clear All Conversations Failed")
+        Task.detached {
+            do {
+                try await context.perform {
+                    try persistenceController.executeAndMergeChanges(using: [
+                        NSBatchDeleteRequest(fetchRequest: Message.fetchRequest()),
+                        NSBatchDeleteRequest(fetchRequest: Conversation.fetchRequest())
+                    ], in: context)
+                }
+                await MainActor.run {
+                    conversationViewModel.selectedConversation = nil
+                }
+            } catch {
+                await MainActor.run {
+                    vm.throwError(error, title: "Clear All Conversations Failed")
+                }
+            }
         }
     }
 }

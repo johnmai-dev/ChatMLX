@@ -16,7 +16,7 @@ struct HorizontalLabeledContentStyle: LabeledContentStyle {
         }
         .frame(minHeight: 35)
         .padding(.horizontal)
-        
+
     }
 }
 

@@ -1,5 +1,5 @@
 {
-  "originHash" : "abfff542bc4df674e107b815bb2eb68cf14edf79991cd6e62fb3c1d42a5ffa1a",
+  "originHash" : "8b17ce993eabb8acc9a586f8f2954a4513d6ab871abc6590ca9536d2975b7c4f",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "b39252eacd159904afd7d718bba0afabb87f2f2f",
         "version" : "1.3.9"
+      }
+    },
+    {
+      "identity" : "anycodable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Flight-School/AnyCodable",
+      "state" : {
+        "revision" : "862808b2070cd908cb04f9aafe7de83d35f81b05",
+        "version" : "0.6.7"
       }
     },
     {
@@ -107,6 +116,15 @@
       "state" : {
         "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04",
         "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "semaphore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/groue/Semaphore",
+      "state" : {
+        "revision" : "2543679282aa6f6c8ecf2138acd613ed20790bc2",
+        "version" : "0.1.0"
       }
     },
     {

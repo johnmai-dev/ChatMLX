@@ -9,9 +9,9 @@ import Splash
 import SwiftUI
 
 struct TextOutputFormat: OutputFormat {
-    private let theme: Theme
+    private let theme: Splash.Theme
 
-    init(theme: Theme) {
+    init(theme: Splash.Theme) {
         self.theme = theme
     }
 
@@ -22,10 +22,10 @@ struct TextOutputFormat: OutputFormat {
 
 extension TextOutputFormat {
     struct Builder: OutputBuilder {
-        private let theme: Theme
+        private let theme: Splash.Theme
         private var accumulatedText: [Text]
 
-        fileprivate init(theme: Theme) {
+        fileprivate init(theme: Splash.Theme) {
             self.theme = theme
             self.accumulatedText = []
         }

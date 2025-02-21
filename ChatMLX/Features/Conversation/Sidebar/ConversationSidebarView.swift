@@ -10,20 +10,17 @@ import Luminare
 import SwiftUI
 
 struct ConversationSidebarView: View {
-    @Environment(ConversationViewModel.self) private var vm
-    @Environment(\.managedObjectContext) private var viewContext
-
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Conversation.updatedAt, ascending: false)],
         animation: .default
     )
     private var conversations: FetchedResults<Conversation>
 
+    private let theme = Theme.shared
+    private let store = ConversationStore.shared
+
     @Binding var selectedConversation: Conversation?
-
-    @State private var keyword = ""
-
-    let padding: CGFloat = 8
+    @State var keyword = ""
 
     var body: some View {
         VStack(spacing: 0) {
@@ -39,7 +36,7 @@ struct ConversationSidebarView: View {
     private func headerView() -> some View {
         HStack {
             Spacer()
-            Button(action: vm.createConversation) {
+            Button(action: store.createConversation) {
                 Image(systemName: "plus")
             }
             SettingsLink {
@@ -47,7 +44,7 @@ struct ConversationSidebarView: View {
             }
         }
         .frame(height: 50)
-        .padding(.horizontal, padding)
+        .padding(.horizontal, theme.padding)
         .buttonStyle(.plain)
     }
 
@@ -71,11 +68,11 @@ struct ConversationSidebarView: View {
             UltramanTextField(
                 $keyword,
                 placeholder: Text("Search Conversation..."),
-                onSubmit: updateSearchPredicate
+                onSubmit: search
             )
             .frame(height: 25)
         }
-        .padding(.horizontal, padding)
+        .padding(.horizontal, theme.padding)
     }
 
     @ViewBuilder
@@ -83,17 +80,23 @@ struct ConversationSidebarView: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(conversations) { conversation in
-                    ConversationSidebarItem(conversation: conversation)
+                    ConversationSidebarItemView(
+                        conversation: conversation,
+                        selectedConversation: $selectedConversation
+                    )
                 }
             }
         }
         .padding(.top, 6)
     }
 
-    private func updateSearchPredicate() {
-        conversations.nsPredicate = keyword.isEmpty ? nil : NSPredicate(
-            format: "title CONTAINS [cd] %@ OR ANY messages.content CONTAINS [cd] %@",
-            keyword, keyword
-        )
+    func search() {
+        conversations.nsPredicate =
+            keyword.isEmpty
+            ? nil
+            : NSPredicate(
+                format: "title CONTAINS [cd] %@ OR ANY messages.content CONTAINS [cd] %@",
+                keyword, keyword
+            )
     }
 }

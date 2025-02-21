@@ -9,6 +9,7 @@ import Alamofire
 import Luminare
 import SwiftUI
 import os
+import HuggingfaceHub
 
 struct MLXCommunityView: View {
     @Environment(SettingsViewModel.self) var settingsViewModel
@@ -18,11 +19,12 @@ struct MLXCommunityView: View {
     @State var next: String?
 
     @State var status: Status = .isLoading
+    
+    @State var models: [CachedRepoInfo] = []
 
     private let sessionManager: Session
-    
-    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MLXCommunityView")
 
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MLXCommunityView")
 
     enum Status {
         case isLoading
@@ -48,16 +50,15 @@ struct MLXCommunityView: View {
                 ) {
                     Task {
                         settingsViewModel.remoteModels = []
-                        await fetchModels(search: searchQuery)
+//                        await fetchModels(search: searchQuery)
                     }
                 }
-
             }
             .padding(.top)
             .padding(.horizontal)
 
             List {
-                ForEach($settingsViewModel.remoteModels) { model in
+                ForEach($models,id: \.repoId) { model in
                     MLXCommunityItemView(model: model)
                 }
                 lastRowView
@@ -66,7 +67,7 @@ struct MLXCommunityView: View {
         }
         .onAppear {
             Task {
-                await fetchModels()
+//                await fetchModels()
             }
         }
         .ultramanNavigationTitle("MLX Community")
@@ -74,13 +75,16 @@ struct MLXCommunityView: View {
             Button(action: {
                 Task {
                     settingsViewModel.remoteModels = []
-                    await fetchModels()
+//                    await fetchModels()
                 }
             }) {
                 Image(systemName: "arrow.clockwise")
             }
             .disabled(isFetching)
             .buttonStyle(.plain)
+        }
+        .task {
+//            models = (try? HuggingfaceHubService().scanMLXModels()) ?? []
         }
     }
 
@@ -100,7 +104,7 @@ struct MLXCommunityView: View {
         .frame(maxWidth: .infinity)
         .onAppear {
             Task {
-                await loadMoreModelsIfNeeded()
+//                await loadMoreModelsIfNeeded()
             }
         }
     }
@@ -131,71 +135,71 @@ struct MLXCommunityView: View {
         return linkDict
     }
 
-    func fetchModels(search: String? = nil) async {
-        guard !isFetching else { return }
-        isFetching = true
-        status = .isLoading
-
-        var urlComponents = URLComponents(
-            string: "https://huggingface.co/api/models")!
-        var queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "limit", value: "20"),
-            URLQueryItem(name: "author", value: "mlx-community"),
-            URLQueryItem(name: "sort", value: "downloads"),
-            URLQueryItem(name: "pipeline_tag", value: "text-generation"),
-        ]
-
-        if let search {
-            queryItems.append(URLQueryItem(name: "search", value: search))
-        }
-
-        urlComponents.queryItems = queryItems
-
-        guard let url = urlComponents.url else { return }
-
-        sessionManager.request(url).validate().responseDecodable(
-            of: [RemoteModel].self
-        ) { response in
-            switch response.result {
-            case .success(let decodedResponse):
-                settingsViewModel.remoteModels = decodedResponse
-                if let links = response.response?.allHeaderFields["Link"]
-                    as? String
-                {
-                    next = parseLinks(links)["next"]
-                }
-                status = .idle
-            case .failure(let error):
-                logger.error("Failed to fetch models: \(error)")
-                status = .error(error.localizedDescription)
-            }
-            isFetching = false
-        }
-    }
-
-    func loadMoreModelsIfNeeded() async {
-        guard !isFetching, let nextURL = URL(string: next ?? "") else { return }
-        isFetching = true
-        status = .isLoading
-
-        sessionManager.request(nextURL).validate().responseDecodable(
-            of: [RemoteModel].self
-        ) { response in
-            switch response.result {
-            case .success(let decodedResponse):
-                settingsViewModel.remoteModels.append(
-                    contentsOf: decodedResponse)
-                if let links = response.response?.allHeaderFields["Link"]
-                    as? String
-                {
-                    next = parseLinks(links)["next"]
-                }
-                status = .idle
-            case .failure(let error):
-                logger.error("Failed to fetch more models: \(error)")
-                status = .error(error.localizedDescription)
-            }
-            isFetching = false
-        }
-    }
+//    func fetchModels(search: String? = nil) async {
+//        guard !isFetching else { return }
+//        isFetching = true
+//        status = .isLoading
+//
+//        var urlComponents = URLComponents(
+//            string: "https://huggingface.co/api/models")!
+//        var queryItems: [URLQueryItem] = [
+//            URLQueryItem(name: "limit", value: "20"),
+//            URLQueryItem(name: "author", value: "mlx-community"),
+//            URLQueryItem(name: "sort", value: "downloads"),
+//            URLQueryItem(name: "pipeline_tag", value: "text-generation"),
+//        ]
+//
+//        if let search {
+//            queryItems.append(URLQueryItem(name: "search", value: search))
+//        }
+//
+//        urlComponents.queryItems = queryItems
+//
+//        guard let url = urlComponents.url else { return }
+//
+//        sessionManager.request(url).validate().responseDecodable(
+//            of: [RemoteModel].self
+//        ) { response in
+//            switch response.result {
+//            case .success(let decodedResponse):
+//                settingsViewModel.remoteModels = decodedResponse
+//                if let links = response.response?.allHeaderFields["Link"]
+//                    as? String
+//                {
+//                    next = parseLinks(links)["next"]
+//                }
+//                status = .idle
+//            case .failure(let error):
+//                logger.error("Failed to fetch models: \(error)")
+//                status = .error(error.localizedDescription)
+//            }
+//            isFetching = false
+//        }
+//    }
+//
+//    func loadMoreModelsIfNeeded() async {
+//        guard !isFetching, let nextURL = URL(string: next ?? "") else { return }
+//        isFetching = true
+//        status = .isLoading
+//
+//        sessionManager.request(nextURL).validate().responseDecodable(
+//            of: [RemoteModel].self
+//        ) { response in
+//            switch response.result {
+//            case .success(let decodedResponse):
+//                settingsViewModel.remoteModels.append(
+//                    contentsOf: decodedResponse)
+//                if let links = response.response?.allHeaderFields["Link"]
+//                    as? String
+//                {
+//                    next = parseLinks(links)["next"]
+//                }
+//                status = .idle
+//            case .failure(let error):
+//                logger.error("Failed to fetch more models: \(error)")
+//                status = .error(error.localizedDescription)
+//            }
+//            isFetching = false
+//        }
+//    }
 }

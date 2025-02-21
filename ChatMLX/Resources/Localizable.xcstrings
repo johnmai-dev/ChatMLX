@@ -219,12 +219,6 @@
             "value" : ""
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -232,6 +226,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
@@ -457,12 +457,6 @@
             "value" : "%.2f"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%.2f"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -470,6 +464,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f"
@@ -695,12 +695,6 @@
             "value" : "%.2f%%"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%.2f%%"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -708,6 +702,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f%%"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f%%"
@@ -933,12 +933,6 @@
             "value" : "%d"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -946,6 +940,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%d"
@@ -1171,12 +1171,6 @@
             "value" : "%lld"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1184,6 +1178,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -1415,12 +1415,6 @@
             "value" : "%1$lld / %2$lld"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld / %2$lld"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1432,243 +1426,11 @@
             "state" : "translated",
             "value" : "%1$lld / %2$lld"
           }
-        }
-      }
-    },
-    "%lldM" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "‏%lld مليون"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld M"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld M"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld M"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Mt"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldJuta"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldJ"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld M"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld M"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld МБ"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldМ"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldM"
+            "value" : "%1$lld / %2$lld"
           }
         }
       }
@@ -1891,12 +1653,6 @@
             "value" : "%lldMB"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldMB"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1904,6 +1660,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldMB"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lldMB"
@@ -2130,12 +1892,6 @@
             "value" : "Giới thiệu"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關於"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2147,8 +1903,26 @@
             "state" : "translated",
             "value" : "關於"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關於"
+          }
         }
       }
+    },
+    "An error has occurred!" : {
+
+    },
+    "Any to Any" : {
+
+    },
+    "API Key" : {
+
+    },
+    "API Proxy Address" : {
+
     },
     "Apple Intelligence Effect" : {
       "localizations" : {
@@ -2368,12 +2142,6 @@
             "value" : "Hiệu ứng Trí tuệ của Apple"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple 智能效果"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2384,6 +2152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple 智能效應"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 智能效果"
           }
         }
       }
@@ -2606,12 +2380,6 @@
             "value" : "Bạn có chắc chắn muốn xóa '%@' không?"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "您確定要刪除「%@」嗎？"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2619,6 +2387,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您確定要刪除「%@」嗎？"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "您確定要刪除「%@」嗎？"
@@ -2844,12 +2618,6 @@
             "value" : "Làm mờ"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模糊"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2857,6 +2625,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模糊"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "模糊"
@@ -3082,12 +2856,6 @@
             "value" : "Hủy"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3095,6 +2863,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消"
@@ -3320,12 +3094,6 @@
             "value" : "ChatMLX"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ChatMLX"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3333,6 +3101,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ChatMLX"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ChatMLX"
@@ -3559,12 +3333,6 @@
             "value" : "Kiểm tra cập nhật"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "檢查更新"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3572,6 +3340,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檢查更新"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "檢查更新"
@@ -3798,12 +3572,6 @@
             "value" : "Đang kiểm tra..."
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在檢查..."
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3814,6 +3582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在檢查"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在檢查..."
           }
         }
       }
@@ -4037,12 +3811,6 @@
             "value" : "Xóa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "清除"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4050,6 +3818,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "清除"
@@ -4275,12 +4049,6 @@
             "value" : "Xóa Tất Cả Cuộc Trò Chuyện"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "清除所有對話"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4288,6 +4056,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除所有對話"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "清除所有對話"
@@ -4513,12 +4287,6 @@
             "value" : "Màu sắc"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顏色"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4526,6 +4294,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顏色"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "顏色"
@@ -4751,12 +4525,6 @@
             "value" : "Xác nhận Xóa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "確認刪除"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4764,6 +4532,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認刪除"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "確認刪除"
@@ -4989,12 +4763,6 @@
             "value" : "Tiêu đề cuộc trò chuyện"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "對話標題"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5002,6 +4770,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "對話標題"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "對話標題"
@@ -5227,12 +5001,6 @@
             "value" : "Sao chép"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "複製"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5243,6 +5011,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "拷貝"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複製"
           }
         }
       }
@@ -5465,12 +5239,6 @@
             "value" : "Điểm Kết Thúc Tùy Chỉnh"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自訂端點"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5481,6 +5249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自定義端點"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自訂端點"
           }
         }
       }
@@ -5703,12 +5477,6 @@
             "value" : "Điểm cuối Custom Hugging Face"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自定 Hugging Face 端點"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5720,243 +5488,11 @@
             "state" : "translated",
             "value" : "自訂 Hugging Face 端點"
           }
-        }
-      }
-    },
-    "Default Conversation" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "المحادثة الافتراضية"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversa predeterminada"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Výchozí konverzace"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard samtale"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardunterhaltung"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Προεπιλεγμένη Συνομιλία"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Conversation"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Conversation"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Conversation"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversación predeterminada"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversación predeterminada"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oletuskeskustelu"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversation par défaut"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversation par défaut"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שיחה ברירת מחדל"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "डिफ़ॉल्ट बातचीत"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zadani razgovor"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alapértelmezett beszélgetés"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Percakapan Default"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversazione predefinita"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "デフォルトの会話"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본 대화"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Perbualan Lalai"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardkonversasjon"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standaardgesprek"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Domyślna konwersacja"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversa Padrão"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversa Predefinida"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conversație implicită"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разговор по умолчанию"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Predvolená konverzácia"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardkonversation"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "การสนทนาเริ่มต้น"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Varsayılan Konuşma"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Розмова за замовчуванням"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đoạn hội thoại mặc định"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "默認對話"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "默认对话"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "預設對話"
+            "value" : "自定 Hugging Face 端點"
           }
         }
       }
@@ -6179,12 +5715,6 @@
             "value" : "Tiêu đề cuộc trò chuyện mặc định"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "預設對話標題"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6192,6 +5722,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設對話標題"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "預設對話標題"
@@ -6417,12 +5953,6 @@
             "value" : "Xóa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "刪除"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6430,6 +5960,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "刪除"
@@ -6655,12 +6191,6 @@
             "value" : "Chế độ hiển thị"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顯示模式"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6668,6 +6198,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示模式"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "顯示模式"
@@ -6894,12 +6430,6 @@
             "value" : "Xong"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "完成"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6907,6 +6437,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
@@ -7133,12 +6669,6 @@
             "value" : "Trình quản lý Tải xuống"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "下載管理器"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7146,6 +6676,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下載管理器"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "下載管理器"
@@ -7371,12 +6907,6 @@
             "value" : "Điểm cuối"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "端點"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7384,6 +6914,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "端點"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "端點"
@@ -7609,12 +7145,6 @@
             "value" : "Toàn Màn Hình"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全螢幕模式"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7625,6 +7155,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "進入全螢幕模式"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全螢幕模式"
           }
         }
       }
@@ -7847,12 +7383,6 @@
             "value" : "Nhập mã thông báo Hugging Face của bạn"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "輸入你的 Hugging Face 令牌"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7864,8 +7394,20 @@
             "state" : "translated",
             "value" : "輸入您的 Hugging Face 令牌"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入你的 Hugging Face 令牌"
+          }
         }
       }
+    },
+    "Enter your OpenAI API Key" : {
+
+    },
+    "Enter your OpenAI API Proxy Address" : {
+
     },
     "Exit Full Screen" : {
       "localizations" : {
@@ -8085,12 +7627,6 @@
             "value" : "Thoát Chế Độ Toàn Màn Hình"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出全屏幕"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8102,243 +7638,11 @@
             "state" : "translated",
             "value" : "退出全螢幕"
           }
-        }
-      }
-    },
-    "Experimental Features" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الميزات التجريبية"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funcions experimentals"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimentální funkce"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eksperimentelle funktioner"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimentelle Funktionen"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Πειραματικές Δυνατότητες"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimental Features"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimental Features"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimental Features"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funciones experimentales"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funciones experimentales"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kokeelliset ominaisuudet"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonctionnalités expérimentales"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fonctionnalités expérimentales"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "פיצ'רים ניסיוניים"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "प्रायोगिक फीचर्स"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eksperimentalne značajke"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kísérleti funkciók"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fitur Eksperimental"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funzionalità Sperimentali"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "実験的な機能"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "실험적 기능"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ciri Eksperimen"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eksperimentelle funksjoner"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimentele functies"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funkcje eksperymentalne"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recursos experimentais"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funcionalidades Experimentais"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Funcții Experimentale"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Экспериментальные функции"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimentálne funkcie"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experimentella funktioner"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "คุณสมบัติการทดลอง"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Deneysel Özellikler"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експериментальні функції"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tính Năng Thử Nghiệm"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "實驗性功能"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "实验性功能"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "實驗性功能"
+            "value" : "退出全屏幕"
           }
         }
       }
@@ -8561,12 +7865,6 @@
             "value" : "Các tính năng thử nghiệm có thể có những hạn chế về hiệu suất. Các tính năng và giao diện lập trình có thể thay đổi bất kỳ lúc nào."
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "實驗功能可能有性能限制。功能和編程接口可能會隨時更改。"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8577,6 +7875,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "實驗功能可能有性能限制。功能和程式介面可能隨時更改。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "實驗功能可能有性能限制。功能和編程接口可能會隨時更改。"
           }
         }
       }
@@ -8799,12 +8103,6 @@
             "value" : "Phản hồi"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "意見反饋"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8816,243 +8114,11 @@
             "state" : "translated",
             "value" : "意見回饋"
           }
-        }
-      }
-    },
-    "GPU Cache Limit" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حد ذاكرة التخزين المؤقت لوحدة معالجة الرسوميات"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Límit de memòria cau de la GPU"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limit pro mezipaměť GPU"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Begrænsning for GPU-cache"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU-Cache-Grenze"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Όριο προσωρινής μνήμης GPU"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU Cache Limit"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU Cache Limit"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU Cache Limit"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Límite de caché de GPU"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Límite de Caché de GPU"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU-välimuistin raja"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limite de cache GPU"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limite de cache GPU"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מגבלת המטמון של ה-GPU"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU कैश सीमा"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ograničenje GPU predmemorije"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU gyorsítótár korlátja"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Batas Cache GPU"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limite cache GPU"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPUキャッシュ制限"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU 캐시 제한"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Had Cache GPU"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU-hurtigbuffergrense"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU-cachelimiet"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limit bufora GPU"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limite de Cache da GPU"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limite da Cache da GPU"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limită cache GPU"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ограничение кэша GPU"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limit vyrovnávacej pamäte GPU"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gräns för GPU-cache"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ขีดจำกัดแคช GPU"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU Önbellek Limiti"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Граничення кешу GPU"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Giới hạn bộ nhớ đệm GPU"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPU 緩存限制"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU缓存限制"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GPU 快取上限"
+            "value" : "意見反饋"
           }
         }
       }
@@ -9276,12 +8342,6 @@
             "value" : "Chung"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一般"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9292,6 +8352,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "概述"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
           }
         }
       }
@@ -9514,12 +8580,6 @@
             "value" : "Tạo thời gian"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "生成時間"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9527,6 +8587,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生成時間"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "生成時間"
@@ -9752,12 +8818,6 @@
             "value" : "Tạo mã mỗi giây"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每秒產生代幣"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9768,6 +8828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "每秒生成 Token"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每秒產生代幣"
           }
         }
       }
@@ -9990,12 +9056,6 @@
             "value" : "GitHub"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GitHub"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10003,6 +9063,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "GitHub"
@@ -10010,240 +9076,719 @@
         }
       }
     },
-    "Hugging Face" : {
+    "GPU Cache Limit" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "حد ذاكرة التخزين المؤقت لوحدة معالجة الرسوميات"
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Límit de memòria cau de la GPU"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limit pro mezipaměť GPU"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Begrænsning for GPU-cache"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU-Cache-Grenze"
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Όριο προσωρινής μνήμης GPU"
           }
         },
         "en-AU" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU Cache Limit"
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU Cache Limit"
           }
         },
         "en-IN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU Cache Limit"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Límite de caché de GPU"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Límite de Caché de GPU"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU-välimuistin raja"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limite de cache GPU"
           }
         },
         "fr-CA" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limite de cache GPU"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "מגבלת המטמון של ה-GPU"
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU कैश सीमा"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Ograničenje GPU predmemorije"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU gyorsítótár korlátja"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Batas Cache GPU"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limite cache GPU"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPUキャッシュ制限"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU 캐시 제한"
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Had Cache GPU"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU-hurtigbuffergrense"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU-cachelimiet"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limit bufora GPU"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limite de Cache da GPU"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limite da Cache da GPU"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limită cache GPU"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Ограничение кэша GPU"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Limit vyrovnávacej pamäte GPU"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Gräns för GPU-cache"
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "ขีดจำกัดแคช GPU"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU Önbellek Limiti"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Граничення кешу GPU"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "Giới hạn bộ nhớ đệm GPU"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU缓存限制"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hugging Face"
+            "value" : "GPU 快取上限"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GPU 緩存限制"
+          }
+        }
+      }
+    },
+    "GPU Memory Limit" : {
+
+    },
+    "https://hf-mirror.com" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://hf-mirror.com"
+          }
+        }
+      }
+    },
+    "https://huggingface.co" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://huggingface.co"
           }
         }
       }
@@ -10466,12 +10011,6 @@
             "value" : "Điểm cuối Hugging Face"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hugging Face 端點"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10479,6 +10018,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hugging Face 端點"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hugging Face 端點"
@@ -10705,12 +10250,6 @@
             "value" : "Hugging Face Repo Id"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hugging Face Repo ID"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10721,6 +10260,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hugging Face 儲存庫 ID"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hugging Face Repo ID"
           }
         }
       }
@@ -10943,12 +10488,6 @@
             "value" : "Mã Hugging Face"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hugging Face Token"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10960,8 +10499,20 @@
             "state" : "translated",
             "value" : "Hugging Face Token"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hugging Face Token"
+          }
         }
       }
+    },
+    "Image Text to Text (Vision)" : {
+
+    },
+    "Import" : {
+
     },
     "Language" : {
       "localizations" : {
@@ -11181,12 +10732,6 @@
             "value" : "Ngôn ngữ"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "語言"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11198,244 +10743,11 @@
             "state" : "translated",
             "value" : "語言"
           }
-        }
-      }
-    },
-    "MLX Community" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مجتمع MLX"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comunitat MLX"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komunita MLX"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX-fællesskab"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Community"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Κοινότητα MLX"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Community"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Community"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Community"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comunidad MLX"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comunidad MLX"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX-yhteisö"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Communauté MLX"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Communauté MLX"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קהילת MLX"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX समुदाय"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zajednica MLX"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Közösség"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komunitas MLX"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Community MLX"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLXコミュニティ"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX 커뮤니티"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komuniti MLX"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX-fellesskap"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX-community"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Społeczność MLX"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comunidade MLX"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Comunidade"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comunitatea MLX"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Сообщество"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komunita MLX"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX-community"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ชุมชน MLX"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX Topluluğu"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Спільнота MLX"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cộng đồng MLX"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "MLX 社群"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX 社区"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MLX 社群"
+            "value" : "語言"
           }
         }
       }
@@ -11658,12 +10970,6 @@
             "value" : "Chiều dài tối đa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "最大長度"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11671,6 +10977,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最大長度"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "最大長度"
@@ -11896,12 +11208,6 @@
             "value" : "Giới hạn tin nhắn tối đa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "訊息數量上限"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11909,6 +11215,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "訊息數量上限"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "訊息數量上限"
@@ -12134,12 +11446,6 @@
             "value" : "Kiểm soát Tin nhắn"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "訊息控制"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12150,6 +11456,492 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "訊息控制"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "訊息控制"
+          }
+        }
+      }
+    },
+    "ML" : {
+
+    },
+    "MLX Community" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مجتمع MLX"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunitat MLX"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komunita MLX"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX-fællesskab"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Community"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοινότητα MLX"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Community"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Community"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Community"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunidad MLX"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunidad MLX"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX-yhteisö"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communauté MLX"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communauté MLX"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "קהילת MLX"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX समुदाय"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zajednica MLX"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Közösség"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komunitas MLX"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Community MLX"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLXコミュニティ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX 커뮤니티"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komuniti MLX"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX-fellesskap"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX-community"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Społeczność MLX"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunidade MLX"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Comunidade"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunitatea MLX"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Сообщество"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komunita MLX"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX-community"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ชุมชน MLX"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX Topluluğu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спільнота MLX"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cộng đồng MLX"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX 社区"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX 社群"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MLX 社群"
+          }
+        }
+      }
+    },
+    "mlx-community/OpenELM-3B" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "en-AU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "en-IN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mlx-community/OpenELM-3B"
           }
         }
       }
@@ -12372,12 +12164,6 @@
             "value" : "Kiểu máy"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模型"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12389,8 +12175,17 @@
             "state" : "translated",
             "value" : "模型"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模型"
+          }
         }
       }
+    },
+    "Model List" : {
+
     },
     "Model Settings" : {
       "localizations" : {
@@ -12610,12 +12405,6 @@
             "value" : "Cài đặt Mô hình"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模型設定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12627,243 +12416,11 @@
             "state" : "translated",
             "value" : "模型設定"
           }
-        }
-      }
-    },
-    "Model State" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حالة النموذج"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estat del model"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stav modelu"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modeltilstand"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modellstatus"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Κατάσταση Μοντέλου"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model State"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model Status"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model State"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estado del Modelo"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estado del modelo"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mallin tila"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "État du modèle"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "État du modèle"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "מצב דגם"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "मॉडल स्थिति"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stanje modela"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modellállapot"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keadaan Model"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stato modello"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "モデルの状態"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "모델 상태"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keadaan Model"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modelltilstand"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modelstatus"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stan modelu"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estado do Modelo"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estado do Modelo"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model de stare"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Состояние модели"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stav modelu"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modelläge"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "สถานะโมเดล"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model Durumu"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Стан моделі"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trạng thái mô hình"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "模型狀態"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模型状态"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模型狀態"
+            "value" : "模型設定"
           }
         }
       }
@@ -13087,12 +12644,6 @@
             "value" : "Mô hình"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "模型"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13103,6 +12654,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "型號"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模型"
           }
         }
       }
@@ -13326,12 +12883,6 @@
             "value" : "Trò chuyện mới"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新聊天"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13339,6 +12890,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新聊天"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "新聊天"
@@ -13564,12 +13121,6 @@
             "value" : "Cuộc trò chuyện mới"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新對話"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13577,6 +13128,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新對話"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "新對話"
@@ -13803,12 +13360,6 @@
             "value" : "Tác vụ Mới"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新任務"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13819,6 +13370,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新增任務"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新任務"
           }
         }
       }
@@ -14042,12 +13599,6 @@
             "value" : "Không có Trò chuyện"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無聊天"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14058,6 +13609,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "沒有聊天"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無聊天"
           }
         }
       }
@@ -14280,12 +13837,6 @@
             "value" : "Không có hội thoại"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "沒有對話"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14296,6 +13847,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "尚未有對話"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有對話"
           }
         }
       }
@@ -14518,12 +14075,6 @@
             "value" : "Không được chọn"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未選擇"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14534,6 +14085,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未選取"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未選擇"
           }
         }
       }
@@ -14756,12 +14313,6 @@
             "value" : "Đồng ý"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "確定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14773,8 +14324,20 @@
             "state" : "translated",
             "value" : "好的"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確定"
+          }
         }
       }
+    },
+    "Open %@" : {
+
+    },
+    "Other AI Provider" : {
+
     },
     "Please enter Hugging Face Repo ID" : {
       "extractionState" : "manual",
@@ -14995,12 +14558,6 @@
             "value" : "Vui lòng nhập ID Kho Hugging Face"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請輸入 Hugging Face Repo ID"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15008,6 +14565,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入 Hugging Face Repo ID"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "請輸入 Hugging Face Repo ID"
@@ -15234,12 +14797,6 @@
             "value" : "Vui lòng chọn cuộc trò chuyện mới"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請選擇新的聊天"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15247,6 +14804,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇新的聊天"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "請選擇新的聊天"
@@ -15472,12 +15035,6 @@
             "value" : "Vui lòng chọn cuộc trò chuyện mới"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請選擇新的對話"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15485,6 +15042,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇新的對話"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "請選擇新的對話"
@@ -15711,12 +15274,6 @@
             "value" : "Tùy chọn và cài đặt mô hình"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "喜好設定和模型設定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15727,6 +15284,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "偏好設定與模型設定"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "喜好設定和模型設定"
           }
         }
       }
@@ -15949,12 +15512,6 @@
             "value" : "Thời gian nhắc nhở"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "提示時間"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15962,6 +15519,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提示時間"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "提示時間"
@@ -16187,12 +15750,6 @@
             "value" : "Phím nhắc/Giây"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "提示字元/秒"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16204,8 +15761,17 @@
             "state" : "translated",
             "value" : "提示 Token/每秒"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "提示字元/秒"
+          }
         }
       }
+    },
+    "Quit" : {
+
     },
     "Regenerate" : {
       "localizations" : {
@@ -16425,12 +15991,6 @@
             "value" : "Tạo lại"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新生成"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16438,6 +15998,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新生成"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "重新生成"
@@ -16663,12 +16229,6 @@
             "value" : "Kích thước ngữ cảnh lặp lại"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重複上下文大小"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16676,6 +16236,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複上下文大小"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "重複上下文大小"
@@ -16901,12 +16467,6 @@
             "value" : "Hình phạt lặp lại"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重複懲罰"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16914,6 +16474,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重複懲罰"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "重複懲罰"
@@ -17139,12 +16705,6 @@
             "value" : "Đặt Lại Tất Cả Cài Đặt"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重設所有設定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17152,6 +16712,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重設所有設定"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "重設所有設定"
@@ -17377,12 +16943,6 @@
             "value" : "Tìm kiếm Cuộc trò chuyện..."
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "搜尋對話…"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17393,6 +16953,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "搜尋對話..."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋對話…"
           }
         }
       }
@@ -17615,12 +17181,6 @@
             "value" : "Tìm kiếm..."
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "搜尋..."
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17628,6 +17188,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋..."
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "搜尋..."
@@ -17854,12 +17420,6 @@
             "value" : "Gửi"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "傳送"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17870,6 +17430,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "發送"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "傳送"
           }
         }
       }
@@ -18093,12 +17659,6 @@
             "value" : "Cài đặt"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18106,6 +17666,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定"
@@ -18331,12 +17897,6 @@
             "value" : "Nhắc Hệ Thống"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系統提示"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18344,6 +17904,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統提示"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "系統提示"
@@ -18569,12 +18135,6 @@
             "value" : "Cài đặt hệ thống"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系統設定"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18582,6 +18142,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系統設定"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "系統設定"
@@ -18807,12 +18373,6 @@
             "value" : "Nhiệt độ"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "溫度"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18824,8 +18384,17 @@
             "state" : "translated",
             "value" : "溫度"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "溫度"
+          }
         }
       }
+    },
+    "Text Generation" : {
+
     },
     "Title" : {
       "localizations" : {
@@ -19045,12 +18614,6 @@
             "value" : "Tiêu đề"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "標題"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19058,6 +18621,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標題"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "標題"
@@ -19283,12 +18852,6 @@
             "value" : "Mã thông báo"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "憑證"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19299,6 +18862,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "代幣"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "憑證"
           }
         }
       }
@@ -19521,12 +19090,6 @@
             "value" : "Top P"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "熱門 P"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19534,6 +19097,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "熱門 P"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "熱門 P"
@@ -19760,12 +19329,6 @@
             "value" : "Nhập tin nhắn của bạn…"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "輸入您的訊息……"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19776,6 +19339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鍵入您的消息…"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入您的訊息……"
           }
         }
       }
@@ -19999,12 +19568,6 @@
             "value" : "Không xác định"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "不明"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20015,6 +19578,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未知"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
           }
         }
       }
@@ -20237,12 +19806,6 @@
             "value" : "Sử Dụng Điểm Kết Nối Tùy Chỉnh"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用自定端點"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20253,6 +19816,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用自訂端點"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用自定端點"
           }
         }
       }
@@ -20475,12 +20044,6 @@
             "value" : "Sử dụng độ dài tối đa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用最大長度"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20488,6 +20051,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用最大長度"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用最大長度"
@@ -20713,12 +20282,6 @@
             "value" : "Sử dụng Giới hạn Tin nhắn Tối đa"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用最大消息限制"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20729,6 +20292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用最大訊息限制"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用最大消息限制"
           }
         }
       }
@@ -20951,12 +20520,6 @@
             "value" : "Sử dụng Phạt Lặp Lại"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用重複懲罰"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -20964,6 +20527,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用重複懲罰"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用重複懲罰"
@@ -21189,12 +20758,6 @@
             "value" : "Sử dụng nhắc nhở hệ thống"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用系統提示"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21202,6 +20765,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用系統提示"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用系統提示"
@@ -21427,12 +20996,6 @@
             "value" : "Phiên bản %@"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本 %@"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21440,6 +21003,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 %@"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "版本 %@"
@@ -21665,12 +21234,6 @@
             "value" : "Cảnh báo"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "警告"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21678,6 +21241,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "警告"
@@ -21903,12 +21472,6 @@
             "value" : "Hiển thị cửa sổ"
           }
         },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "視窗外觀"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -21920,722 +21483,17 @@
             "state" : "translated",
             "value" : "視窗外觀"
           }
-        }
-      }
-    },
-    "https://hf-mirror.com" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://hf-mirror.com"
+            "value" : "視窗外觀"
           }
         }
       }
     },
-    "https://huggingface.co" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "https://huggingface.co"
-          }
-        }
-      }
-    },
-    "mlx-community/OpenELM-3B" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "en-AU" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "en-IN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "zh-HK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "mlx-community/OpenELM-3B"
-          }
-        }
-      }
+    "X" : {
+
     }
   },
   "version" : "1.0"

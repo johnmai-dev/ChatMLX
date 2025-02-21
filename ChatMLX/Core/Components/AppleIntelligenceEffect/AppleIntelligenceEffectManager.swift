@@ -7,6 +7,7 @@
 
 import AppKit
 
+@MainActor
 final class AppleIntelligenceEffectManager {
     static let shared = AppleIntelligenceEffectManager()
 

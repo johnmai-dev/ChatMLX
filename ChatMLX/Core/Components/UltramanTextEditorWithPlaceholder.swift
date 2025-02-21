@@ -61,6 +61,7 @@ struct UltramanTextEditor: NSViewRepresentable {
             super.init()
         }
 
+        @MainActor
         func setupPlaceholder(for textView: NSTextView) {
             let placeholder = NSTextView(frame: textView.bounds)
             placeholder.isSelectable = false
@@ -98,15 +99,16 @@ struct UltramanTextEditor: NSViewRepresentable {
             if commandSelector == #selector(NSResponder.insertNewline(_:)) {
                 if NSEvent.modifierFlags.contains(.shift) {
                     textView.insertNewlineIgnoringFieldEditor(nil)
-                    return true
                 } else {
                     parent.onSubmit()
-                    return true
                 }
+
+                return true
             }
             return false
         }
 
+        @MainActor
         func updatePlaceholder(for textView: NSTextView) {
             placeholderView?.isHidden =
                 !textView.string.isEmpty || textView.selectedRange().length > 0

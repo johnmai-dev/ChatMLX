@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A348" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24B83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Conversation" representedClassName="Conversation" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="generateTime" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="inferring" transient="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="maxLength" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="maxMessagesLimit" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="modelProvider" optional="YES" attributeType="String"/>
+        <attribute name="modelRaw" optional="YES" attributeType="String"/>
+        <attribute name="modelType" optional="YES" attributeType="String"/>
+        <attribute name="modelValue" optional="YES" attributeType="String"/>
         <attribute name="promptTime" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="promptTokensPerSecond" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="repetitionContextSize" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -21,7 +24,7 @@
         <attribute name="useMaxMessagesLimit" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="useRepetitionPenalty" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="useSystemPrompt" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Message" inverseName="conversation" inverseEntity="Message"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Message" inverseName="conversation" inverseEntity="Message"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
@@ -33,7 +36,7 @@
         <relationship name="conversation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Conversation" inverseName="messages" inverseEntity="Conversation"/>
     </entity>
     <entity name="ModelInfo" representedClassName="ModelInfo" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="maxInputLength" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="maxOutputLength" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>

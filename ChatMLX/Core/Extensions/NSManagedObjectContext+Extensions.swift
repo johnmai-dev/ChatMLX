@@ -8,16 +8,9 @@
 import CoreData
 
 extension NSManagedObjectContext {
-    @discardableResult
-    func saveIfNeeded() throws -> Bool {
-        guard hasChanges else { return false }
-        try save()
-        return true
-    }
-    
-    func saveIfNeeded() async throws -> Bool {
-        try await perform {
-            try self.saveIfNeeded()
+    func saveChanges() throws {
+        if hasChanges {
+            try save()
         }
     }
 }

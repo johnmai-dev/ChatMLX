@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Environment(SettingsViewModel.self) var vm
+    @Environment(SettingsStore.self) var store
 
     var body: some View {
-        @Bindable var vm = vm
-
         UltramanNavigationSplitView(sidebarWidth: 220) {
             SettingsSidebarView()
         } detail: {
             Group {
-                switch vm.activeTabID {
+                switch store.activeTabID {
                 case .general:
                     GeneralView()
                 case .defaultConversation:
@@ -25,6 +23,8 @@ struct SettingsView: View {
                 case .huggingFace:
                     HuggingFaceView()
                 case .models:
+                    LocalModelsView()
+                case .providers:
                     ModelManagerView()
                 case .downloadManager:
                     DownloadManagerView()

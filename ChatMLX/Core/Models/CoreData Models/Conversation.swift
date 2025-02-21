@@ -9,11 +9,56 @@ import CoreData
 import Defaults
 
 extension Conversation {
-    override func awakeFromInsert() {
+    //    var modelIdentifier: ProviderModel.Identifier? {
+    //        get {
+    //            guard let modelType, let modelValue, let modelProvider, let provider = Provider(rawValue: modelProvider) else {
+    //                return nil
+    //            }
+    //
+    //            switch modelType {
+    //            case "id":
+    //                return .id(modelValue, provider)
+    //            case "directory":
+    //                guard let url = URL(string: modelValue) else { return nil }
+    //                return .directory(url, provider)
+    //            default:
+    //                return nil
+    //            }
+    //        }
+    //        set {
+    //            switch newValue {
+    //            case .id(let idString, let provider):
+    //                modelType = "id"
+    //                modelValue = idString
+    //                modelProvider = provider.rawValue
+    //            case .directory(let url, let provider):
+    //                modelType = "directory"
+    //                modelValue = url.absoluteString
+    //                modelProvider = provider.rawValue
+    //            case nil:
+    //                modelType = nil
+    //                modelValue = nil
+    //                modelProvider = nil
+    //            }
+    //        }
+    //    }
+
+    var model: ProviderModel.Identifier? {
+        get {
+            guard let modelRaw = modelRaw?.data(using: .utf8) else { return nil }
+            return try? JSONDecoder().decode(ProviderModel.Identifier.self, from: modelRaw)
+        }
+        set {
+            guard let data = try? JSONEncoder().encode(newValue) else { return }
+            modelRaw = String(data: data, encoding: .utf8)
+        }
+    }
+
+    override public func awakeFromInsert() {
         super.awakeFromInsert()
 
         setPrimitiveValue(Defaults[.defaultTitle], forKey: #keyPath(Conversation.title))
-//        setPrimitiveValue(Defaults[.defaultModel], forKey: #keyPath(Conversation.model))
+        //        setPrimitiveValue(Defaults[.defaultModel], forKey: #keyPath(Conversation.model))
 
         setPrimitiveValue(Defaults[.defaultTemperature], forKey: #keyPath(Conversation.temperature))
         setPrimitiveValue(Defaults[.defaultTopP], forKey: #keyPath(Conversation.topP))
@@ -45,7 +90,7 @@ extension Conversation {
         setPrimitiveValue(Date.now, forKey: #keyPath(Conversation.updatedAt))
     }
 
-    override func willSave() {
+    override public func willSave() {
         super.willSave()
         setPrimitiveValue(Date.now, forKey: #keyPath(Conversation.updatedAt))
     }
@@ -75,7 +120,7 @@ extension Conversation {
             message.format()
         }
 
-        if self.useSystemPrompt, let systemPrompt = self.systemPrompt,!systemPrompt.isEmpty {
+        if self.useSystemPrompt, let systemPrompt = self.systemPrompt, !systemPrompt.isEmpty {
             dictionary.insert(
                 self.formatMessage(
                     role: .system,

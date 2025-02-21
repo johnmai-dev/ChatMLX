@@ -14,6 +14,8 @@ struct OpenAIProviderView: View {
     @State var isEnabled: Bool? = false
 
     @Default(.enableOpenAI) var enableOpenAI
+    @Default(.openAIApiKey) var openAIApiKey
+    @Default(.openAIBaseURL) var openAIBaseURL
 
     var body: some View {
         ProviderView(
@@ -43,15 +45,22 @@ struct OpenAIProviderView: View {
     @ViewBuilder
     func Content() -> some View {
         DividedVStack {
-            // API Key
             LabeledContent("API Key") {
-                SecureField("API Key", text: .constant(""))
+                UltramanSecureField(
+                    $openAIApiKey,
+                    placeholder: Text("Enter your OpenAI API Key"),
+                    alignment: .trailing
+                )
             }
 
-            // API 代理地址
             LabeledContent("API Proxy Address") {
-                TextField("API Proxy Address", text: .constant(""))
+                UltramanTextField(
+                    $openAIBaseURL,
+                    placeholder: Text("Enter your OpenAI API Proxy Address"),
+                    alignment: .trailing
+                )
             }
         }
+        .labeledContentStyle(.horizontal)
     }
 }

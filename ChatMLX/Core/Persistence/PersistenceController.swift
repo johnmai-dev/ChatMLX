@@ -19,7 +19,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "ChatMLX")
+        container = NSPersistentContainer(name: "ChatMLX2")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -49,46 +49,46 @@ struct PersistenceController {
         container.viewContext
     }
 
-//    func exisits<T: NSManagedObject>(
-//        _ model: T,
-//        in context: NSManagedObjectContext
-//    ) -> T? {
-//        try? context.existingObject(with: model.objectID) as? T
-//    }
-//
-//    func delete(_ model: some NSManagedObject) throws {
-//        if let existingContact = exisits(model, in: container.viewContext) {
-//            container.viewContext.delete(existingContact)
-//            Task(priority: .background) {
-//                try await container.viewContext.perform {
-//                    try container.viewContext.save()
-//                }
-//            }
-//        }
-//    }
-//
-//    func clear(_ entityName: String) throws -> [NSManagedObjectID] {
-//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(
-//            entityName: entityName)
-//        let batchDeteleRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//        batchDeteleRequest.resultType = .resultTypeObjectIDs
-//
-//        if let fetchResult = try container.viewContext.execute(batchDeteleRequest)
-//            as? NSBatchDeleteResult,
-//            let deletedManagedObjectIds = fetchResult.result as? [NSManagedObjectID],
-//            !deletedManagedObjectIds.isEmpty
-//        {
-//            return deletedManagedObjectIds
-//        }
-//
-//        return []
-//    }
-//
-    func save() throws {
-        Task.detached(priority: .background) {
-            try await viewContext.saveIfNeeded()
-        }
-    }
+    //    func exisits<T: NSManagedObject>(
+    //        _ model: T,
+    //        in context: NSManagedObjectContext
+    //    ) -> T? {
+    //        try? context.existingObject(with: model.objectID) as? T
+    //    }
+    //
+    //    func delete(_ model: some NSManagedObject) throws {
+    //        if let existingContact = exisits(model, in: container.viewContext) {
+    //            container.viewContext.delete(existingContact)
+    //            Task(priority: .background) {
+    //                try await container.viewContext.perform {
+    //                    try container.viewContext.save()
+    //                }
+    //            }
+    //        }
+    //    }
+    //
+    //    func clear(_ entityName: String) throws -> [NSManagedObjectID] {
+    //        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(
+    //            entityName: entityName)
+    //        let batchDeteleRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    //        batchDeteleRequest.resultType = .resultTypeObjectIDs
+    //
+    //        if let fetchResult = try container.viewContext.execute(batchDeteleRequest)
+    //            as? NSBatchDeleteResult,
+    //            let deletedManagedObjectIds = fetchResult.result as? [NSManagedObjectID],
+    //            !deletedManagedObjectIds.isEmpty
+    //        {
+    //            return deletedManagedObjectIds
+    //        }
+    //
+    //        return []
+    //    }
+    //
+    //    func save() throws {
+    //        Task.detached(priority: .background) {
+    //            try await viewContext.saveIfNeeded()
+    //        }
+    //    }
 
     func executeAndMergeChanges(using request: NSBatchDeleteRequest, in context: NSManagedObjectContext) throws {
         try executeAndMergeChanges(using: [request], in: context)
@@ -99,7 +99,9 @@ struct PersistenceController {
         mergeChanges(changes)
     }
 
-    private func execute(request: NSBatchDeleteRequest, in context: NSManagedObjectContext) throws -> [NSManagedObjectID] {
+    private func execute(request: NSBatchDeleteRequest, in context: NSManagedObjectContext) throws
+        -> [NSManagedObjectID]
+    {
         request.resultType = .resultTypeObjectIDs
         let result = try context.execute(request) as? NSBatchDeleteResult
         return result?.result as? [NSManagedObjectID] ?? []
@@ -125,7 +127,7 @@ struct PersistenceController {
         let object = try context.existingObject(with: id)
         context.delete(object)
         if saveImmediately {
-            try save()
+            //            try save()
         }
     }
 }

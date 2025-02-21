@@ -6,8 +6,8 @@
 //
 
 import Defaults
-import os
 import SwiftUI
+import os
 
 @main
 struct ChatMLXApp: App {
@@ -26,11 +26,11 @@ struct ChatMLXApp: App {
 
     // MARK: - State
 
-    @State private var conversationViewModel: ConversationViewModel = .init()
+    @State private var conversationStore: ConversationStore = .init()
     @State private var settingsViewModel: SettingsViewModel = .init()
-    @State private var runner: LLMRunner = .init()
-    @State private var modelManagerViewModel: ModelManagerViewModel = .init()
     @State private var errorWrapper: ErrorWrapper?
+    @State private var settingsStore = SettingsStore()
+
 
     // MARK: - User Defaults
 
@@ -46,10 +46,11 @@ struct ChatMLXApp: App {
             mainWindow()
             settingsWindow()
         }
-        .environment(modelManagerViewModel)
-        .environment(conversationViewModel)
+        .environment(conversationStore)
+        .environment(ModelStore())
+        .environment(settingsStore)
+        .environment(DownloadStore.shared)
         .environment(settingsViewModel)
-        .environment(runner)
         .environment(\.managedObjectContext, viewContext)
         .environment(\.locale, .init(identifier: language.rawValue))
         .environment(\.appError) { error in
@@ -59,7 +60,7 @@ struct ChatMLXApp: App {
         }
         .onChange(of: scenePhase) { _, newValue in
             if newValue == .background {
-                saveContext()
+                try? viewContext.saveChanges()
             }
         }
 
@@ -74,7 +75,7 @@ extension ChatMLXApp {
 
     private func mainWindow() -> some Scene {
         WindowGroup(id: Constants.mainWindowID) {
-            ConversationView()
+            ConversationView(selectedConversation: $conversationStore.selectedConversation)
                 .frame(minWidth: 900, minHeight: 580)
                 .sheet(item: $errorWrapper) { errorWrapper in
                     ErrorView(errorWrapper: errorWrapper)
@@ -125,15 +126,6 @@ extension ChatMLXApp {
     private func updateVersionIfNeeded() {
         if currentVersion != lastLaunchedVersion {
             Defaults[.lastLaunchedVersion] = currentVersion
-        }
-    }
-
-    private func saveContext() {
-        guard viewContext.hasChanges else { return }
-        do {
-            try viewContext.save()
-        } catch {
-            logger.error("Failed to save context: \(error.localizedDescription)")
         }
     }
 }

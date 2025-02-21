@@ -12,8 +12,7 @@ import SwiftUI
 
 struct DefaultConversationView: View {
     @Default(.defaultTitle) var defaultTitle
-//    @Default(.defaultModel) var defaultModel
-    @State var defaultModel: ModelInfo?
+    @Default(.defaultModel) var defaultModel
     @Default(.defaultTemperature) var defaultTemperature
     @Default(.defaultTopP) var defaultTopP
     @Default(.defaultMaxLength) var defaultMaxLength
@@ -28,9 +27,7 @@ struct DefaultConversationView: View {
 
     @Default(.defaultProvider) var defaultProvider
 
-    @State private var localModels: [LocalModel] = []
-
-    @Environment(SettingsViewModel.self) var vm
+    @Environment(ModelStore.self) var modelStore
 
     private let padding: CGFloat = 6
 
@@ -46,12 +43,13 @@ struct DefaultConversationView: View {
                 }
 
                 LuminareSection("Model Settings") {
-                    LabeledContent("Provider") {
-                        DefaultProviderPicker(provider: $defaultProvider)
-                    }
-
                     LabeledContent("Model") {
-                        DefaultModelPicker(provider: $defaultProvider)
+                        ModelPicker(
+                            selection: $defaultModel,
+                            models: modelStore.models
+                        ).task {
+                            await modelStore.fetchModels()
+                        }
                     }
 
                     LabeledContent("Temperature") {
@@ -160,59 +158,10 @@ struct DefaultConversationView: View {
         .labeledContentStyle(.horizontal)
         .compactSliderSecondaryColor(.white)
         .scrollContentBackground(.hidden)
-        .onAppear(perform: loadModels)
         .ultramanNavigationTitle("Default Conversation")
         .labelsHidden()
         .buttonStyle(.borderless)
         .foregroundStyle(.white)
         .toggleStyle(.switch)
-    }
-
-    private func loadModels() {
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(
-            for: .documentDirectory, in: .userDomainMask
-        )[0]
-        let modelsURL = documentsURL.appendingPathComponent(
-            "huggingface/models")
-
-        do {
-            let contents = try fileManager.contentsOfDirectory(
-                at: modelsURL, includingPropertiesForKeys: nil,
-                options: [.skipsHiddenFiles]
-            )
-            var models: [LocalModel] = []
-
-            for groupURL in contents {
-                if groupURL.hasDirectoryPath {
-                    let modelContents = try fileManager.contentsOfDirectory(
-                        at: groupURL, includingPropertiesForKeys: nil,
-                        options: [.skipsHiddenFiles]
-                    )
-
-                    for modelURL in modelContents {
-                        if modelURL.hasDirectoryPath {
-                            models.append(
-                                LocalModel(
-                                    group: groupURL.lastPathComponent,
-                                    name: modelURL.lastPathComponent,
-                                    url: modelURL
-                                )
-                            )
-                        }
-                    }
-                }
-            }
-//
-//            if !models.contains(where: { $0.origin == defaultModel }) {
-//                defaultModel = ""
-//            }
-
-            Task { @MainActor in
-                localModels = models
-            }
-        } catch {
-            vm.throwError(error, title: "Load Models Failed")
-        }
     }
 }

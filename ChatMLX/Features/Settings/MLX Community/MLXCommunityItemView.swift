@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import HuggingfaceHub
 
 struct MLXCommunityItemView: View {
-    @Binding var model: RemoteModel
+    @Binding var model: CachedRepoInfo
     @Environment(SettingsViewModel.self) var settingsViewModel
 
     var body: some View {
@@ -38,35 +39,35 @@ struct MLXCommunityItemView: View {
             }
 
             HStack {
-                Label("\(model.downloads)", systemImage: "arrow.down.circle")
-                    .font(.subheadline)
-
-                Label("\(model.likes)", systemImage: "heart.fill")
-                    .font(.subheadline)
-                    .foregroundColor(.red.opacity(0.6))
+//                Label("\(model.downloads)", systemImage: "arrow.down.circle")
+//                    .font(.subheadline)
+//
+//                Label("\(model.likes)", systemImage: "heart.fill")
+//                    .font(.subheadline)
+//                    .foregroundColor(.red.opacity(0.6))
 
                 Spacer()
 
-                if let pipelineTag = model.pipelineTag {
-                    Text(pipelineTag)
-                        .font(.subheadline)
-                        .padding(4)
-                        .background(Color.blue.opacity(0.2))
-                        .cornerRadius(4)
-                }
+//                if let pipelineTag = model.pipelineTag {
+//                    Text(pipelineTag)
+//                        .font(.subheadline)
+//                        .padding(4)
+//                        .background(Color.blue.opacity(0.2))
+//                        .cornerRadius(4)
+//                }
             }
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(model.tags, id: \.self) { tag in
-                        Text(tag)
-                            .font(.caption)
-                            .padding(4)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(4)
-                    }
-                }
-            }
+//            ScrollView(.horizontal, showsIndicators: false) {
+//                HStack {
+//                    ForEach(model.tags, id: \.self) { tag in
+//                        Text(tag)
+//                            .font(.caption)
+//                            .padding(4)
+//                            .background(Color.gray.opacity(0.2))
+//                            .cornerRadius(4)
+//                    }
+//                }
+//            }
         }
         .padding()
         .background(.black.opacity(0.3))

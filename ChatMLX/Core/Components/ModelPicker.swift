@@ -9,23 +9,16 @@ import Defaults
 import SwiftUI
 
 struct ModelPicker: View {
-    @Binding var selection: ModelInfo?
-    @Default(.enableOpenAI) private var enableOpenAI
-    @State var models: [ProviderModel] = []
+    @Binding var selection: ProviderModel.Identifier?
+    let models: [ProviderModel]
 
     var groupedModels: [String: [ProviderModel]] {
-        var models: [ProviderModel] = []
-        do {
-            models = try MLXProvider.fetchModels()
-        } catch {
-            print("Error fetching models")
+        Dictionary(grouping: models) {
+            switch $0.id {
+            case .id(_, let provider), .directory(_, let provider):
+                provider.rawValue
+            }
         }
-
-        if enableOpenAI {
-            models = models + OpenAIProvider.fetchModels()
-        }
-
-        return Dictionary(grouping: models) { $0.provider.rawValue }
     }
 
     var body: some View {
@@ -33,11 +26,15 @@ struct ModelPicker: View {
             selection: $selection,
             label: Image(systemName: "brain")
         ) {
-            Text("Not selected").tag(nil as ModelInfo?)
+            Text("Not selected").tag(nil as ProviderModel.Identifier?)
             ForEach(groupedModels.keys.sorted(), id: \.self) { provider in
                 Section(header: Text(provider)) {
-                    ForEach(groupedModels[provider]!, id: \.self) { model in
-                        Text(model.name ?? model.id).tag(model)
+                    ForEach(groupedModels[provider]!) { model in
+                        if let name = model.name {
+                            Text(name).tag(model.id)
+                        } else if case .id(let id, _) = model.id {
+                            Text(id).tag(model.id)
+                        }
                     }
                 }
             }
@@ -45,25 +42,5 @@ struct ModelPicker: View {
         .pickerStyle(.menu)
         .labelsHidden()
         .tint(.white)
-        .task {
-            await fetchModels()
-        }
-    }
-
-    private func fetchModels() async {
-        var models: [ProviderModel] = []
-        do {
-            models = try MLXProvider.fetchModels()
-        } catch {
-            print("Error fetching models")
-        }
-
-        if enableOpenAI {
-            models = models + OpenAIProvider.fetchModels()
-        }
-
-        await MainActor.run {
-            self.models = models
-        }
     }
 }

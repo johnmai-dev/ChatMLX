@@ -45,7 +45,7 @@ extension Defaults.Keys {
         "appleIntelligenceEffectDisplay", default: .appInternal)
 
     static let defaultProvider = Key<Provider>("defaultProvider", default: .mlx)
-    static let defaultModel = Key<String?>("defaultModel", default: nil)
+    static let defaultModel = Key<ProviderModel.Identifier?>("defaultModel", default: nil)
 
     static let enableOpenAI = Key<Bool>("enableOpenAI", default: false)
 

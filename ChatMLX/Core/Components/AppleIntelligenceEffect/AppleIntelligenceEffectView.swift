@@ -31,8 +31,8 @@ struct AppleIntelligenceEffectView: View {
 
         let blurRadius =
             angle > 0
-                ? maxBlurRadiusBase + 6 * sin(elapsed * 2)
-                : minBlurRadiusBase + 3 * sin(elapsed * 4)
+            ? maxBlurRadiusBase + 6 * sin(elapsed * 2)
+            : minBlurRadiusBase + 3 * sin(elapsed * 4)
 
         return Rectangle()
             .visualEffect { content, proxy in

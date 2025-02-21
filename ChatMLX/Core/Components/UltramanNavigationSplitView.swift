@@ -1,23 +1,15 @@
 //
-//  UltramanNavigationSplitView.swift
-//  ChatMLX
+//  UltramanNavigationTitleKey.swift
+//  ChatMLXUI
 //
-//  Created by John Mai on 2024/8/3.
+//  Created by John Mai on 2025/2/22.
 //
 
 import SwiftUI
 
-struct UltramanNavigationTitleKey: PreferenceKey {
-    static let defaultValue: String = ""
+extension AnyView: @unchecked @retroactive Sendable {}
 
-    static func reduce(
-        value: inout String, nextValue: () -> String
-    ) {
-        value = nextValue()
-    }
-}
-
-struct UltramanToolbarItem: Identifiable, Equatable {
+struct UltramanToolbarItem: Identifiable, Equatable, Sendable {
     static func == (lhs: UltramanToolbarItem, rhs: UltramanToolbarItem) -> Bool {
         lhs.id == rhs.id && lhs.alignment == rhs.alignment
     }
@@ -30,23 +22,9 @@ struct UltramanToolbarItem: Identifiable, Equatable {
         case leading, trailing
     }
 
-    init(alignment: ToolbarAlignment = .trailing, @ViewBuilder content: () -> some View) {
+    nonisolated init(alignment: ToolbarAlignment = .trailing, @ViewBuilder content: () -> some View) {
         self.content = AnyView(content())
         self.alignment = alignment
-    }
-}
-
-struct UltramanNavigationToolbarKey: PreferenceKey {
-    static var defaultValue: [UltramanToolbarItem] = []
-
-    static func reduce(
-        value: inout [UltramanToolbarItem],
-        nextValue: () -> [UltramanToolbarItem]
-    ) {
-        let newItems = nextValue()
-        if !newItems.isEmpty {
-            value.append(contentsOf: newItems)
-        }
     }
 }
 
@@ -57,36 +35,96 @@ struct UltramanToolbarBuilder {
     }
 }
 
+private struct UltramanNavigationTitleKey: EnvironmentKey {
+    static let defaultValue: String = ""
+}
+
+struct UltramanNavigationToolbarKey: EnvironmentKey {
+    static let defaultValue: [UltramanToolbarItem] = []
+}
+
+struct UltramanNavigationStateKey: EnvironmentKey {
+    static let defaultValue: UltramanNavigationState = .init()
+}
+
+extension EnvironmentValues {
+    var ultramanNavigationState: UltramanNavigationState {
+        get { self[UltramanNavigationStateKey.self] }
+        set { self[UltramanNavigationStateKey.self] = newValue }
+    }
+}
+
+struct UltramanNavigationTitleViewModifier: ViewModifier {
+    let title: String
+
+    @Environment(\.ultramanNavigationState) var state
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                state.title = title
+            }
+            .onChange(of: title) { oldValue, newValue in
+                print("title changed from \(oldValue) to \(newValue)")
+                state.title = newValue
+            }
+            .onDisappear {
+                // 在视图消失时清除标题
+                state.title = ""
+            }
+    }
+}
+
+struct UltramanNavigationToolbarViewModifier: ViewModifier {
+    let items: [UltramanToolbarItem]
+
+    @Environment(UltramanNavigationState.self) var state
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                state.toolbarItems = items
+            }
+            .onChange(of: items) { oldValue, newValue in
+                print("toolbar items changed")
+                state.toolbarItems = newValue
+            }
+            .onDisappear {
+                // 在视图消失时清除标题
+                state.toolbarItems = []
+            }
+    }
+}
+
+@Observable
+class UltramanNavigationState: @unchecked Sendable {
+    var title: String = ""
+    var toolbarItems: [UltramanToolbarItem] = []
+}
+
 extension View {
     func ultramanNavigationTitle(_ title: String) -> some View {
-        preference(key: UltramanNavigationTitleKey.self, value: title)
+        modifier(UltramanNavigationTitleViewModifier(title: title))
     }
 
     func ultramanToolbar(
         alignment: UltramanToolbarItem.ToolbarAlignment = .trailing,
         @ViewBuilder content: () -> some View
     ) -> some View {
-        preference(
-            key: UltramanNavigationToolbarKey.self,
-            value: [
-                UltramanToolbarItem(
-                    alignment: alignment,
-                    content: {
-                        content()
-                    }
-                )
-            ]
-        )
+        modifier(
+            UltramanNavigationToolbarViewModifier(items: [
+                UltramanToolbarItem(alignment: alignment, content: { content() })
+            ]))
     }
 
-    func ultramanToolbar(
-        @UltramanToolbarBuilder content: () -> [UltramanToolbarItem]
-    ) -> some View {
-        preference(
-            key: UltramanNavigationToolbarKey.self,
-            value: content()
-        )
-    }
+    //    func ultramanToolbar(
+    //        @UltramanToolbarBuilder content: () -> [UltramanToolbarItem]
+    //    ) -> some View {
+    //        preference(
+    //            key: UltramanNavigationToolbarKey.self,
+    //            value: content()
+    //        )
+    //    }
 }
 
 struct UltramanNavigationSplitView<Sidebar: View, Detail: View>: View {
@@ -95,42 +133,34 @@ struct UltramanNavigationSplitView<Sidebar: View, Detail: View>: View {
     let sidebar: () -> Sidebar
     let detail: () -> Detail
 
-    @State private var navigationTitle: String = ""
-    @State private var toolbarItems: [UltramanToolbarItem] = []
-
     @State private var isDragging = false
     @State private var isSidebarVisible = true
 
     let minSidebarWidth: CGFloat = 200
     let maxSidebarWidth: CGFloat = 400
 
+    @State private var state = UltramanNavigationState()
+
     var body: some View {
-        GeometryReader { _ in
-            HStack(spacing: .zero) {
-                if isSidebarVisible {
-                    sidebar()
-                        .frame(width: sidebarWidth)
-                        .transition(.move(edge: .leading))
-                        .zIndex(10)
-                }
+        HStack(spacing: .zero) {
+            if isSidebarVisible {
+                sidebar()
+                    .frame(width: sidebarWidth)
+                    .transition(.move(edge: .leading))
+                    .zIndex(10)
+            }
 
-                VStack(spacing: .zero) {
-                    Divider()
-                    detail()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .onPreferenceChange(UltramanNavigationTitleKey.self) {
-                            navigationTitle = $0
-                        }
-                        .onPreferenceChange(UltramanNavigationToolbarKey.self) {
-                            toolbarItems = $0
-                        }
-                }
+            VStack(spacing: .zero) {
+                Divider()
+                detail()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
 
-                .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
-                    header().frame(height: 52)
-                }
+            .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
+                header().frame(height: 52)
             }
         }
+        .environment(state)
     }
 
     @ViewBuilder
@@ -151,18 +181,18 @@ struct UltramanNavigationSplitView<Sidebar: View, Detail: View>: View {
                 }
                 .buttonStyle(.plain)
 
-                ForEach(toolbarItems.filter { $0.alignment == .leading }) {
+                ForEach(state.toolbarItems.filter { $0.alignment == .leading }) {
                     item in
                     item.content
                 }
 
                 Spacer()
-                Text(LocalizedStringKey(navigationTitle))
+                Text(LocalizedStringKey(state.title))
                     .font(.headline)
 
                 Spacer()
 
-                ForEach(toolbarItems.filter { $0.alignment == .trailing }) {
+                ForEach(state.toolbarItems.filter { $0.alignment == .trailing }) {
                     item in
                     item.content
                 }

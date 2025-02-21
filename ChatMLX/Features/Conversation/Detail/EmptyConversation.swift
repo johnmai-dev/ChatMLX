@@ -9,15 +9,13 @@ import Luminare
 import SwiftUI
 
 struct EmptyConversation: View {
-    @Environment(ConversationViewModel.self) private var conversationViewModel
-
     var body: some View {
         ContentUnavailableView {
             Label("No Conversation", systemImage: "tray.fill")
         } description: {
             Text("Please select a new conversation")
 
-            Button(action: conversationViewModel.createConversation) {
+            Button(action: ConversationStore.shared.createConversation) {
                 Label("New Conversation", systemImage: "plus")
             }
             .buttonStyle(LuminareCompactButtonStyle())

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsSidebarView: View {
-    @Environment(SettingsViewModel.self) var settingsViewModel
+    @Environment(SettingsStore.self) var store
 
     let titlebarHeight: CGFloat = 50
     let groupSpacing: CGFloat = 4
@@ -21,17 +21,18 @@ struct SettingsSidebarView: View {
         .init(.defaultConversation, Image(systemName: "person.bubble")),
         .init(.huggingFace, Image("huggingface")),
         .init(.models, Image(systemName: "brain")),
+        .init(.providers, Image(systemName: "brain")),
         .init(.mlxCommunity, Image("MLX")),
         .init(
             .downloadManager, Image(systemName: "arrow.down.circle"),
-            showIndicator: { $0.tasks.contains { $0.isDownloading } }
+            showIndicator: { DownloadStore.shared.tasks.contains { $0.isDownloading } }
         ),
         .init(.experimentalFeatures, Image(systemName: "flask")),
         .init(.about, Image(systemName: "info.circle")),
     ]
 
     var body: some View {
-        @Bindable var settingsViewModel = settingsViewModel
+        @Bindable var store = store
         VStack(alignment: .leading) {
             Group {
                 Text("Settings")
@@ -43,9 +44,10 @@ struct SettingsSidebarView: View {
             }
             .padding(.horizontal, itemPadding)
 
-            List(selection: $settingsViewModel.activeTabID) {
+            List(selection: $store.activeTabID) {
                 ForEach(Self.tabs) { tab in
-                    SettingsSidebarItemView(tab)
+                    SettingsSidebarItemView(tab: tab)
+                        .tag(tab.id)
                 }
             }
             .scrollContentBackground(.hidden)

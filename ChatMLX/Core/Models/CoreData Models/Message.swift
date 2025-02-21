@@ -13,12 +13,12 @@ extension Message {
         set { roleRaw = newValue.rawValue }
     }
 
-    override func awakeFromInsert() {
+    public override func awakeFromInsert() {
         setPrimitiveValue(Date.now, forKey: #keyPath(Message.createdAt))
         setPrimitiveValue(Date.now, forKey: #keyPath(Message.updatedAt))
     }
 
-    override func willSave() {
+    public override func willSave() {
         super.willSave()
         setPrimitiveValue(Date.now, forKey: #keyPath(Message.updatedAt))
     }
@@ -52,7 +52,10 @@ extension Message {
     }
 
     func suffixMessages() -> [Message] {
-        let conversation = self.conversation
+        guard let conversation = self.conversation else {
+            return []
+        }
+
         let messages = conversation.messages
 
         guard let index = messages.firstIndex(of: self) else {

@@ -49,7 +49,7 @@ let package = Package(
         .target(
             name: "Utilities",
             dependencies: [
-                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Logging", package: "swift-log")
             ]
         ),
     ]

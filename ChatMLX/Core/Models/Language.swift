@@ -92,7 +92,7 @@ enum Language: String, CaseIterable, Identifiable, Defaults.Serializable {
         case .thai: return "ไทย"
         case .turkish: return "Türkçe"
         case .ukrainian: return "Українська"
-        case .vietnamese: return "Tiếng Việt"            
+        case .vietnamese: return "Tiếng Việt"
         }
     }
 }

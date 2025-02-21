@@ -10,9 +10,9 @@ import SwiftUI
 
 @main
 struct ChatMLXApp: App {
-    
+
     var body: some Scene {
-        WindowGroup{
+        WindowGroup {
             Text("66")
         }
     }

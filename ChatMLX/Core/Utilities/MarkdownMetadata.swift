@@ -1,39 +1,74 @@
-//
-//  MarkdownMetadata.swift
-//  ChatMLX
-//
-//  Created by John Mai on 2024/10/10.
-//
-
-import Foundation
-
 struct MarkdownMetadata {
-    var metadata: [String: String] = [:]
-
-    init(markdown: String) {
-        let lines = markdown.components(separatedBy: .newlines)
-        var isMetadata = false
-        var metadataLines: [String] = []
-        var contentLines: [String] = []
-
-        for line in lines {
-            if line.trimmingCharacters(in: .whitespaces) == "---" {
-                isMetadata.toggle()
+    private(set) var values: [String: Any] = [:]
+    
+    init(from markdown: String) {
+        let lines = markdown.split(separator: "\n")
+        guard lines.first == "---" else { return }
+        
+        var currentKey: String?
+        var arrayItems: [String] = []
+        var isCollectingArray = false
+        
+        for line in lines.dropFirst() {
+            if line == "---" {
+                if isCollectingArray, let key = currentKey {
+                    values[key] = arrayItems
+                }
+                return
+            }
+            
+            let trimmedLine = line.trimmingCharacters(in: .whitespaces)
+            guard !trimmedLine.isEmpty else { continue }
+            
+            if trimmedLine.hasPrefix("-") {
+                let item = trimmedLine.dropFirst().trimmingCharacters(in: .whitespaces)
+                if !isCollectingArray {
+                    isCollectingArray = true
+                    arrayItems = []
+                }
+                arrayItems.append(item)
+                if let key = currentKey {
+                    values[key] = arrayItems
+                }
                 continue
             }
-
-            if isMetadata {
-                metadataLines.append(line)
-            } else {
-                contentLines.append(line)
+            
+            if let colonIndex = trimmedLine.firstIndex(of: ":") {
+                if isCollectingArray {
+                    isCollectingArray = false
+                    arrayItems = []
+                }
+                
+                let key = String(trimmedLine[..<colonIndex]).trimmingCharacters(in: .whitespaces)
+                let value = String(trimmedLine[trimmedLine.index(after: colonIndex)...])
+                    .trimmingCharacters(in: .whitespaces)
+                
+                if value.hasPrefix("[") && value.hasSuffix("]") {
+                    let items = value.dropFirst().dropLast()
+                        .split(separator: ",")
+                        .map { $0.trimmingCharacters(in: .whitespaces) }
+                        .filter { !$0.isEmpty }
+                    values[key] = items
+                } else if !value.isEmpty {
+                    values[key] = value
+                }
+                currentKey = key
+                continue
+            }
+            
+            if let key = currentKey {
+                if let existing = values[key] as? String {
+                    values[key] = existing + " " + trimmedLine
+                }
             }
         }
-
-        for line in metadataLines {
-            let parts = line.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
-            if parts.count == 2 {
-                metadata[parts[0]] = parts[1]
-            }
-        }
+    }
+    
+    func string(for key: String) -> String? {
+        values[key] as? String
+    }
+    
+    func array(for key: String) -> [String] {
+        (values[key] as? [String]) ?? []
     }
 }

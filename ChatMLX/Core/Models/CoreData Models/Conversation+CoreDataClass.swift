@@ -2,14 +2,12 @@
 //  Conversation+CoreDataClass.swift
 //  ChatMLX
 //
-//  Created by John Mai on 2024/10/14.
+//  Created by John Mai on 2024/11/9.
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(Conversation)
- class Conversation: NSManagedObject {
-
-}
+class Conversation: NSManagedObject {}

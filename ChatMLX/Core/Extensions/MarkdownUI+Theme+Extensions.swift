@@ -5,11 +5,12 @@
 //  Created by John Mai on 2024/8/18.
 //
 
-import MarkdownUI
+@preconcurrency import MarkdownUI
 import SwiftUI
 
+@MainActor
 extension MarkdownUI.Theme {
-    static let customGitHub = Theme.gitHub.text {
+    static let customGitHub = MarkdownUI.Theme.gitHub.text {
         ForegroundColor(.white)
         BackgroundColor(.clear)
     }

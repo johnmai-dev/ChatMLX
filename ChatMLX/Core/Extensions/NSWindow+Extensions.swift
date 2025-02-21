@@ -24,7 +24,7 @@ extension NSWindow {
             NSLog("Error setting blur radius: \(status)")
         }
 
-        backgroundColor = color
+        backgroundColor = .white.withAlphaComponent(0.001)
         ignoresMouseEvents = false
     }
 }

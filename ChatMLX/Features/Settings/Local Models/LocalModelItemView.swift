@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import HuggingfaceHub
 
 struct LocalModelItemView: View {
-    @Binding var model: LocalModel
+    let name: String
+    
     var onDelete: () -> Void
     @State private var showingDeleteAlert = false
 
     var body: some View {
         VStack {
             HStack {
-                Text(model.name)
+                Text(name)
                 Spacer()
                 Button(action: { showingDeleteAlert = true }) {
                     Image(systemName: "trash")
@@ -33,7 +35,7 @@ struct LocalModelItemView: View {
             Button("Cancel", role: .cancel) {}
             Button("Delete", role: .destructive, action: onDelete)
         } message: {
-            Text("Are you sure you want to delete '\(model.origin)'?")
+            Text("Are you sure you want to delete '\(name)'?")
         }
     }
 }

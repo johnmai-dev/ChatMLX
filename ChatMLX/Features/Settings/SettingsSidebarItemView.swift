@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct SettingsSidebarItemView: View {
-    @Environment(SettingsViewModel.self) var settingsViewModel
+    @Environment(SettingsStore.self) var store
 
     let tab: SettingsTab
 
     @State private var isHovering: Bool = false
     @State private var isActive: Bool = false
     @State private var showIndicator: Bool = false
-
-    init(_ tab: SettingsTab) {
-        self.tab = tab
-    }
 
     var body: some View {
         HStack(spacing: 8) {
@@ -56,12 +52,12 @@ struct SettingsSidebarItemView: View {
         .onHover { isHovering = $0 }
         .onAppear {
             checkIfSelfIsActiveTab()
-            showIndicator = tab.showIndicator?(settingsViewModel) ?? false
+            showIndicator = tab.showIndicator?() ?? false
         }
-        .onChange(of: settingsViewModel.activeTabID) { _, _ in
+        .onChange(of: store.activeTabID) { _, _ in
             checkIfSelfIsActiveTab()
         }
-        .onChange(of: tab.showIndicator?(settingsViewModel) ?? false) {
+        .onChange(of: tab.showIndicator?() ?? false) {
             _, newValue in
             withAnimation {
                 showIndicator = newValue
@@ -72,7 +68,7 @@ struct SettingsSidebarItemView: View {
 
     func checkIfSelfIsActiveTab() {
         withAnimation(.easeOut(duration: 0.1)) {
-            isActive = settingsViewModel.activeTabID == tab.id
+            isActive = store.activeTabID == tab.id
         }
     }
 }

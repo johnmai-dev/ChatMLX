@@ -8,9 +8,9 @@ import SwiftUI
 import os
 
 @Observable
-class SettingsViewModel {
+class SettingsViewModel:@unchecked Sendable {
     private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "SettingsViewModel")
-    
+
     var tasks: [DownloadTask] = []
     var sidebarWidth: CGFloat = 250
     var activeTabID: SettingsTab.ID = .general

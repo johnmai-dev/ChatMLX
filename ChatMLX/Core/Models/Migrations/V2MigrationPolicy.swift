@@ -8,11 +8,14 @@
 import CoreData
 
 class V2MigrationPolicy: NSEntityMigrationPolicy {
-    override func createDestinationInstances(forSource sInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager) throws {
+    override func createDestinationInstances(
+        forSource sInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager
+    ) throws {
         let sourceKeys = sInstance.entity.attributesByName.keys
         let sourceValues = sInstance.dictionaryWithValues(forKeys: sourceKeys.map { $0 as String })
 
-        let destinationInstance = NSEntityDescription.insertNewObject(forEntityName: mapping.destinationEntityName!, into: manager.destinationContext)
+        let destinationInstance = NSEntityDescription.insertNewObject(
+            forEntityName: mapping.destinationEntityName!, into: manager.destinationContext)
         let destinationKeys = destinationInstance.entity.attributesByName.keys.map { $0 as String }
 
         for key in destinationKeys {

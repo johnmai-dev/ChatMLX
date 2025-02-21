@@ -2,7 +2,7 @@
 //  Conversation+CoreDataProperties.swift
 //  ChatMLX
 //
-//  Created by John Mai on 2024/10/14.
+//  Created by John Mai on 2024/11/9.
 //
 //
 
@@ -17,11 +17,13 @@ extension Conversation {
     @NSManaged var createdAt: Date?
     @NSManaged var generateTime: Double
     @NSManaged var inferring: Bool
-    @NSManaged var maxLength: Int64
+    @NSManaged var maxLength: Int
     @NSManaged var maxMessagesLimit: Int32
+    @NSManaged var modelType: String?
+    @NSManaged var modelRaw: String?
     @NSManaged var promptTime: Double
     @NSManaged var promptTokensPerSecond: Double
-    @NSManaged var repetitionContextSize: Int64
+    @NSManaged var repetitionContextSize: Int
     @NSManaged var repetitionPenalty: Float
     @NSManaged var systemPrompt: String?
     @NSManaged var temperature: Float
@@ -33,8 +35,9 @@ extension Conversation {
     @NSManaged var useMaxMessagesLimit: Bool
     @NSManaged var useRepetitionPenalty: Bool
     @NSManaged var useSystemPrompt: Bool
+    @NSManaged var modelValue: String?
+    @NSManaged var modelProvider: String?
     @NSManaged var messages: [Message]
-    @NSManaged var model: ModelInfo?
 }
 
 // MARK: Generated accessors for messages

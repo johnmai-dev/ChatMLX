@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-struct ConversationSidebarItem: View {
-    @ObservedObject var conversation: Conversation
+struct ConversationSidebarItemView: View {
+    let conversation: Conversation
+    @Binding var selectedConversation: Conversation?
 
-    @Environment(\.managedObjectContext) private var viewContext
-    @Environment(ConversationViewModel.self) private var vm
-
-    @State private var isActive: Bool = false
-
-    let persistence = PersistenceController.shared
+    var isActive: Bool {
+        selectedConversation == conversation
+    }
 
     var body: some View {
         Button(action: selectConversation) {
@@ -39,9 +37,7 @@ struct ConversationSidebarItem: View {
             }
             .padding(6)
         }
-        .buttonStyle(UltramanSidebarButtonStyle(isActive: $isActive))
-        .onAppear(perform: updateActiveState)
-        .onChange(of: vm.selectedConversation) { _, _ in updateActiveState() }
+        .buttonStyle(UltramanSidebarButtonStyle(isActive: .constant(isActive)))
         .contextMenu {
             Button(role: .destructive, action: deleteConversation) {
                 Label("Delete", systemImage: "trash")
@@ -50,23 +46,10 @@ struct ConversationSidebarItem: View {
     }
 
     private func selectConversation() {
-        vm.selectedConversation = conversation
-    }
-
-    private func updateActiveState() {
-        withAnimation(.easeOut(duration: 0.1)) {
-            isActive = vm.selectedConversation == conversation
-        }
+        selectedConversation = conversation
     }
 
     private func deleteConversation() {
-        do {
-            try persistence.delete(conversation.objectID, in: viewContext)
-            if vm.selectedConversation == conversation {
-                vm.selectedConversation = nil
-            }
-        } catch {
-            vm.throwError(error, title: "Delete Conversation Failed")
-        }
+        ConversationStore.shared.deleteConversation(conversation)
     }
 }

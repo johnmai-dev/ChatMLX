@@ -17,16 +17,9 @@ struct GeneralView: View {
     @Default(.language) var language
     @Default(.gpuCacheLimit) var gpuCacheLimit
 
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @Environment(SettingsViewModel.self) private var vm
-    @Environment(ConversationViewModel.self) private var conversationViewModel
-
-    @Environment(LLMRunner.self) var runner
+    @Environment(ConversationStore.self) private var conversationStore
 
     let maxRAM = ProcessInfo.processInfo.physicalMemory / (1024 * 1024)
-
-    let persistenceController = PersistenceController.shared
 
     var body: some View {
         VStack(spacing: 18) {
@@ -62,7 +55,7 @@ struct GeneralView: View {
             }
 
             LuminareSection("System Settings") {
-                Button("Clear All Conversations", action: clearAllConversations)
+                Button("Clear All Conversations", action: conversationStore.clearConversations)
                     .frame(height: 35)
                 Button("Reset All Settings", action: resetAllSettings)
                     .frame(height: 35)
@@ -79,28 +72,6 @@ struct GeneralView: View {
 
     private func resetAllSettings() {
         Defaults.removeAll()
-    }
-
-    private func clearAllConversations() {
-        let context = persistenceController.newBackgroundContext()
-
-        Task.detached {
-            do {
-                try await context.perform {
-                    try persistenceController.executeAndMergeChanges(using: [
-                        NSBatchDeleteRequest(fetchRequest: Message.fetchRequest()),
-                        NSBatchDeleteRequest(fetchRequest: Conversation.fetchRequest())
-                    ], in: context)
-                }
-                await MainActor.run {
-                    conversationViewModel.selectedConversation = nil
-                }
-            } catch {
-                await MainActor.run {
-                    vm.throwError(error, title: "Clear All Conversations Failed")
-                }
-            }
-        }
     }
 }
 

@@ -7,7 +7,7 @@
 
 extension ModelInfo {
     var provider: Provider {
-        get { Provider(rawValue: providerRaw) ?? .mlx }
+        get { Provider(rawValue: providerRaw ?? "mlx") ?? .mlx }
         set { providerRaw = newValue.rawValue }
     }
 }

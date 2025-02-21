@@ -9,51 +9,32 @@ import Defaults
 import SwiftUI
 
 struct ConversationView: View {
-    @Environment(ConversationViewModel.self) private var conversationViewModel
-    @Environment(LLMRunner.self) private var runner
-
-    @Default(.enableAppleIntelligenceEffect) var enableAppleIntelligenceEffect
-    @Default(.appleIntelligenceEffectDisplay) var appleIntelligenceEffectDisplay
+    @Binding var selectedConversation: Conversation?
 
     var body: some View {
-        @Bindable var conversationViewModel = conversationViewModel
-
         UltramanNavigationSplitView(
             sidebar: {
-                ConversationSidebarView(
-                    selectedConversation: $conversationViewModel.selectedConversation)
+                ConversationSidebarView(selectedConversation: $selectedConversation)
             },
             detail: {
                 detailView()
+
             }
         )
         .foregroundColor(.white)
         .ultramanMinimalistWindowStyle()
-        .overlay {
-            if enableAppleIntelligenceEffect, appleIntelligenceEffectDisplay == .appInternal,
-                runner.running
-            {
-                AppleIntelligenceEffectView(useRoundedRectangle: false)
-                    .ignoresSafeArea()
-                    .allowsHitTesting(false)
-            }
-        }
+        .appleIntelligenceEffect(isPresented: .constant(false))
     }
 
     @ViewBuilder
     private func detailView() -> some View {
         Group {
-            if let conversation = conversationViewModel.selectedConversation {
-                ConversationDetailView(
-                    conversation: conversation
-                ).id(conversation.id)
+            if let conversation = selectedConversation {
+                ConversationDetailView(conversation: conversation)
+
             } else {
                 EmptyConversation()
             }
         }
     }
-}
-
-#Preview {
-    ConversationView()
 }

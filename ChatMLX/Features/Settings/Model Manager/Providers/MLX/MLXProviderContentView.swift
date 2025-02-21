@@ -8,8 +8,8 @@
 import CompactSlider
 import Defaults
 import Luminare
-import os
 import SwiftUI
+import os
 
 struct MLXProviderContentView: View {
     // MARK: - Properties
@@ -58,13 +58,13 @@ extension MLXProviderContentView {
     private func modelListView() -> some View {
         LabeledContent {
             List {
-                ForEach(providerModels, id: \.self) {
-                    MLXProviderModelItemView(
-                        model: $0,
-                        onDelete: onDelete
-                    )
-                }
-                .padding(.horizontal, -8)
+                //                ForEach(providerModels, id: \.self) {
+                //                    MLXProviderModelItemView(
+                //                        model: $0,
+                //                        onDelete: onDelete
+                //                    )
+                //                }
+                //                .padding(.horizontal, -8)
             }
             .listStyle(.plain)
             .scrollIndicators(.hidden)
@@ -90,7 +90,7 @@ extension MLXProviderContentView {
                 }
             }
             .frame(height: 35)
-            
+
         }
         .padding(.horizontal)
         .labeledContentStyle(.vertical)
@@ -131,19 +131,19 @@ extension MLXProviderContentView {
 
     private func onDelete(_ model: ProviderModel) {
         Task {
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-
-            if let path = model.path {
-                if path.standardized.path.hasPrefix(documentsURL.appendingPathComponent("huggingface/models").standardized.path) {
-                    try? FileManager.default.removeItem(at: path)
-                } else {
-                    if let model = models.first(where: { $0.id == model.id }) {
-                        viewContext.delete(model)
-                        try? viewContext.save()
-                    }
-                }
-                try? await loadProviderModels()
-            }
+            //            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            //
+            //            if let path = model.path {
+            //                if path.standardized.path.hasPrefix(documentsURL.appendingPathComponent("huggingface/models").standardized.path) {
+            //                    try? FileManager.default.removeItem(at: path)
+            //                } else {
+            //                    if let model = models.first(where: { $0.id == model.id }) {
+            //                        viewContext.delete(model)
+            //                        try? viewContext.save()
+            //                    }
+            //                }
+            //                try? await loadProviderModels()
+            //            }
         }
     }
 
@@ -158,18 +158,18 @@ extension MLXProviderContentView {
     // MARK: - Load Provider Models
 
     private func loadProviderModels() async throws {
-        var models = try MLXProvider.fetchModels()
-
-        for model in self.models {
-            if let index = models.firstIndex(where: { $0.id == model.id }) {
-                models[index] = ProviderModel(from: model)
-            } else {
-                models.append(ProviderModel(from: model))
-            }
-        }
-
-        await MainActor.run {
-            providerModels = models
-        }
+        //        var models = try MLXProvider.fetchModels()
+        //
+        //        for model in self.models {
+        //            if let index = models.firstIndex(where: { $0.id == model.id }) {
+        //                models[index] = ProviderModel(from: model)
+        //            } else {
+        //                models.append(ProviderModel(from: model))
+        //            }
+        //        }
+        //
+        //        await MainActor.run {
+        //            providerModels = models
+        //        }
     }
 }

@@ -17,6 +17,7 @@ struct SettingsTab: Identifiable, Equatable {
         case defaultConversation = "Default Conversation"
         case huggingFace = "Hugging Face"
         case models = "Models"
+        case providers = "Providers"
         case mlxCommunity = "MLX Community"
         case downloadManager = "Download Manager"
         case experimentalFeatures = "Experimental Features"
@@ -25,9 +26,9 @@ struct SettingsTab: Identifiable, Equatable {
 
     let id: ID
     let icon: Image
-    let showIndicator: ((SettingsViewModel) -> Bool)?
+    let showIndicator: (() -> Bool)?
 
-    init(_ id: ID, _ icon: Image, showIndicator: ((SettingsViewModel) -> Bool)? = nil) {
+    init(_ id: ID, _ icon: Image, showIndicator: (() -> Bool)? = nil) {
         self.id = id
         self.icon = icon
         self.showIndicator = showIndicator

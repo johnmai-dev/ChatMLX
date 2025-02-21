@@ -20,7 +20,7 @@ extension Message {
     @NSManaged var inferring: Bool
     @NSManaged var roleRaw: String
     @NSManaged var updatedAt: Date?
-    @NSManaged var conversation: Conversation
+    @NSManaged var conversation: Conversation?
 }
 
 extension Message: Identifiable {}

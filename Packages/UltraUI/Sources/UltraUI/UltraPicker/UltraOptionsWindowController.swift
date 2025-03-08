@@ -28,12 +28,17 @@ final class UltraOptionsWindowController: NSWindowController, Sendable {
         window.isFloatingPanel = true
         window.hidesOnDeactivate = false
         window.collectionBehavior = .canJoinAllSpaces
-
-        window.backgroundColor = NSColor.clear
         window.hasShadow = true
         window.isOpaque = false
+        window.backgroundColor = .clear
 
         self.init(window: window)
+    }
+
+    deinit {
+        Task { [self] in
+            await stopEventMonitoring()
+        }
     }
 
     override func showWindow(_ sender: Any?) {
@@ -65,14 +70,58 @@ final class UltraOptionsWindowController: NSWindowController, Sendable {
         guard let window = self.window,
             let sourceWindow = NSApplication.shared.windows.first
         else { return }
-        let targetX =
-            sourceWindow.frame.origin.x + rect.origin.x
-            - (window.frame.size.width - rect.size.width) / 2
-        let targetY =
-            sourceWindow.frame.origin.y + sourceWindow.frame.height
-            - rect.origin.y - window.frame.size.height - rect.size.height
-            - padding
+
+        let rectInScreen = NSRect(
+            x: sourceWindow.frame.origin.x + rect.origin.x,
+            y: sourceWindow.frame.origin.y + sourceWindow.frame.height - rect.origin.y
+                - rect.size.height,
+            width: rect.size.width,
+            height: rect.size.height
+        )
+
+        guard
+            let currentScreen = NSScreen.screens.first(where: {
+                NSIntersectsRect(rectInScreen, $0.frame)
+            }) ?? NSScreen.main
+        else {
+            window.setFrameOrigin(
+                NSPoint(
+                    x: rectInScreen.midX - window.frame.width / 2,
+                    y: rectInScreen.origin.y - window.frame.size.height - padding))
+            window.setWindowBackgroundBlurRadius()
+            return
+        }
+
+        let safeMargin: CGFloat = 10.0
+
+        var targetX = rectInScreen.midX - window.frame.width / 2
+        let targetYBelow = rectInScreen.origin.y - window.frame.size.height - padding
+        let targetYAbove = rectInScreen.origin.y + rectInScreen.size.height + padding
+
+        let screenLeftX = currentScreen.visibleFrame.origin.x
+        let screenRightX = screenLeftX + currentScreen.visibleFrame.width
+
+        if targetX < (screenLeftX + safeMargin) {
+            targetX = screenLeftX + safeMargin
+        }
+
+        let rightEdgePosition = targetX + window.frame.width
+        if rightEdgePosition > (screenRightX - safeMargin) {
+            targetX = screenRightX - window.frame.width - safeMargin
+        }
+
+        var targetY: CGFloat
+
+        let screenBottomY = currentScreen.visibleFrame.origin.y
+
+        if targetYBelow < (screenBottomY + safeMargin) {
+            targetY = targetYAbove
+        } else {
+            targetY = targetYBelow
+        }
+
         window.setFrameOrigin(NSPoint(x: targetX, y: targetY))
+        window.setWindowBackgroundBlurRadius()
     }
 
     func closeWindow() {
@@ -81,23 +130,20 @@ final class UltraOptionsWindowController: NSWindowController, Sendable {
     }
 
     private func startEventMonitoring() {
-
         stopEventMonitoring()
 
-        globalEventMonitor = NSEvent.addGlobalMonitorForEvents(matching: [
-            .leftMouseDown, .rightMouseDown,
-        ]) { [weak self] event in
+        let mouseEvents: NSEvent.EventTypeMask = [.leftMouseDown, .rightMouseDown]
+
+        globalEventMonitor = NSEvent.addGlobalMonitorForEvents(matching: mouseEvents) {
+            [weak self] event in
             guard let self = self else { return }
             self.handleMouseEvent(event)
         }
 
-        localEventMonitor = NSEvent.addLocalMonitorForEvents(matching: [
-            .leftMouseDown, .rightMouseDown,
-        ]) { [weak self] event in
+        localEventMonitor = NSEvent.addLocalMonitorForEvents(matching: mouseEvents) {
+            [weak self] event in
             guard let self = self else { return event }
-
             self.handleMouseEvent(event)
-
             return event
         }
     }
@@ -123,20 +169,19 @@ final class UltraOptionsWindowController: NSWindowController, Sendable {
         }
 
         if !NSPointInRect(clickLocationInScreen, window.frame) {
-
-            DispatchQueue.main.async {
-                self.closeWindow()
+            DispatchQueue.main.async { [weak self] in
+                self?.closeWindow()
             }
         }
     }
 
     func stopEventMonitoring() {
-        if let globalEventMonitor = globalEventMonitor {
+        if let globalEventMonitor {
             NSEvent.removeMonitor(globalEventMonitor)
             self.globalEventMonitor = nil
         }
 
-        if let localEventMonitor = localEventMonitor {
+        if let localEventMonitor {
             NSEvent.removeMonitor(localEventMonitor)
             self.localEventMonitor = nil
         }

@@ -8,11 +8,6 @@
 import AppKit
 
 class UltraOptionsPanel: NSPanel {
-    override var canBecomeKey: Bool {
-        return true
-    }
-
-    override var canBecomeMain: Bool {
-        return false
-    }
+    override var canBecomeKey: Bool { true }
+    override var canBecomeMain: Bool { false }
 }

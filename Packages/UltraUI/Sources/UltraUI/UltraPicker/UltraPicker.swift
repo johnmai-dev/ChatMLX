@@ -8,9 +8,6 @@
 import SwiftUI
 
 public struct UltraPicker<SelectionValue: Hashable>: View {
-
-    @Environment(\.utlraViewBackground) var utlraViewBackground
-
     let options: [SelectionValue]
 
     @Binding var selection: SelectionValue?
@@ -31,6 +28,7 @@ public struct UltraPicker<SelectionValue: Hashable>: View {
             HStack {
                 Text(selection == nil ? "Select a model" : "\(selection!)")
                     .lineLimit(1)
+                    .truncationMode(.head)
                 Image(systemName: "chevron.down")
             }
         }
@@ -42,42 +40,21 @@ public struct UltraPicker<SelectionValue: Hashable>: View {
         .buttonStyle(.ultraPlain)
     }
 
-    @ViewBuilder
-    private func optionsPanel() -> some View {
-        VStack {
-            ForEach(options, id: \.self) { option in
-                Button {
-                    selection = option
-                    controller?.close()
-                } label: {
-                    Text("\(option)")
-
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                }
-                .buttonStyle(
-                    UltraSidebarButtonStyle(selection == option)
-                )
-            }
-        }
-        .padding(8)
-        .background(utlraViewBackground)
-        .cornerRadius(10)
-    }
-
     private func showOptionsPanel() {
         if controller == nil {
             controller = UltraOptionsWindowController(
                 NSHostingView(
-                    rootView: optionsPanel()
+                    rootView: UltraOptions(
+                        selection: $selection,
+                        options: options,
+                        onSelection: { _ in
+                            controller?.closeWindow()
+                        })
                 )
             )
         }
 
         controller?.showWindow()
         controller?.setWindowPosition(rect)
-
     }
 }

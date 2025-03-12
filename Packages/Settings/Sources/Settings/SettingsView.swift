@@ -1,11 +1,11 @@
 //
 //  SettingsView.swift
-//  Sources
+//  Settings
 //
 //  Created by John Mai on 2025/2/27.
 //
 
-import Models
+import Utilities
 import SwiftUI
 import UltraUI
 
@@ -41,7 +41,7 @@ public struct SettingsView: View {
                 .labeledContentStyle(.horizontal)
         }
         .ultraWindowStyle()
-        .frame(width: 650, height: 480)
+        .frame(width: 720, height: 480)
     }
 
     @ViewBuilder
@@ -71,4 +71,9 @@ public struct SettingsView: View {
             EmptyView()
         }
     }
+}
+
+#Preview {
+    SettingsView()
+        .background(Color.black.opacity(0.5))
 }

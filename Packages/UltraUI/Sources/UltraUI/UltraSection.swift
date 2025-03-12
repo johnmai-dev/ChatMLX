@@ -20,7 +20,7 @@ public struct UltraSection<Header, Content, Footer> {
     private var isCollapsible: Bool = false
     private var _isExpanded: Binding<Bool>?
 
-    @Environment(\.utlraViewBackground) var utlraViewBackground
+    @Environment(\.ultraViewBackground) var utlraViewBackground
 
     private init(header: Header, content: Content, footer: Footer) {
         self.header = header
@@ -42,7 +42,6 @@ extension UltraSection: View where Header: View, Content: View, Footer: View {
                 .padding()
                 .background(utlraViewBackground)
                 .cornerRadius(10)
-
             }
 
             footer
@@ -114,14 +113,12 @@ extension UltraSection where Header: View, Content: View, Footer == EmptyView {
     }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension UltraSection where Header == EmptyView, Content: View, Footer == EmptyView {
     public init(@ViewBuilder content: () -> Content) {
         self.init(header: EmptyView(), content: content(), footer: EmptyView())
     }
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 extension UltraSection where Header == Text, Content: View, Footer == EmptyView {
     public init(_ titleKey: LocalizedStringKey, @ViewBuilder content: () -> Content) {
         self.init(header: Text(titleKey), content: content(), footer: EmptyView())
@@ -132,9 +129,7 @@ extension UltraSection where Header == Text, Content: View, Footer == EmptyView 
     }
 }
 
-@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, visionOS 1.0, *)
 extension UltraSection where Header: View, Content: View, Footer == EmptyView {
-    /// 创建一个带有展开状态控制的section
     public init(
         isExpanded: Binding<Bool>, @ViewBuilder content: () -> Content,
         @ViewBuilder header: () -> Header

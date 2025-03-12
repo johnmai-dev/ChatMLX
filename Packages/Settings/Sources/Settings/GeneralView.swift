@@ -1,13 +1,12 @@
 //
 //  GeneralView.swift
-//  Sources
+//  Settings
 //
 //  Created by John Mai on 2025/2/27.
 //
 
-import Common
+import Utilities
 import Defaults
-import Models
 import SwiftUI
 import UltraUI
 

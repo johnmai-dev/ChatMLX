@@ -13,9 +13,12 @@ let package = Package(
             targets: ["Conversation"])
     ],
     dependencies: [
+        .package(name: "Utilities", path: "../Utilities"),
+        .package(name: "Database", path: "../Database"),
         .package(name: "UltraUI", path: "../UltraUI"),
-        .package(name: "Models", path: "../Models"),
+        .package(name: "Intelligence", path: "../Intelligence"),
         .package(url: "https://github.com/markiv/SwiftUI-Shimmer", from: "1.5.1"),
+        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", from: "2.0.2"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,8 +26,11 @@ let package = Package(
         .target(
             name: "Conversation",
             dependencies: [
-                "Models",
+                "Intelligence",
                 "UltraUI",
+                "Utilities",
+                "Database",
+                .product(name: "MarkdownUI", package: "swift-markdown-ui"),
                 .product(name: "Shimmer", package: "SwiftUI-Shimmer"),
             ]
         ),

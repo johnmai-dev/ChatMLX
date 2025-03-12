@@ -8,17 +8,17 @@
 import SwiftUI
 
 extension ButtonStyle where Self == UltraPlainButtonStyle {
-    static var ultraPlain: some ButtonStyle {
+    public static var ultraPlain: some ButtonStyle {
         UltraPlainButtonStyle()
     }
 }
 
-struct UltraPlainButtonStyle: ButtonStyle {
+public struct UltraPlainButtonStyle: ButtonStyle {
     @Environment(\.utlraSecondaryViewBackground) var utlraSecondaryViewBackground
 
     @State private var isHovered = false
 
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         HStack {
             configuration.label
                 .padding(.horizontal, 16)

@@ -1,11 +1,11 @@
 //
 //  SettingsSidebarView.swift
-//  Sources
+//  Settings
 //
 //  Created by John Mai on 2025/2/27.
 //
 
-import Models
+import Utilities
 import SwiftUI
 import UltraUI
 

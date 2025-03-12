@@ -13,9 +13,8 @@ let package = Package(
             targets: ["Settings"])
     ],
     dependencies: [
-        .package(name: "Common", path: "../Common"),
+        .package(name: "Utilities", path: "../Utilities"),
         .package(name: "UltraUI", path: "../UltraUI"),
-        .package(name: "Models", path: "../Models"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,9 +22,8 @@ let package = Package(
         .target(
             name: "Settings",
             dependencies: [
-                "Common",
+                "Utilities",
                 "UltraUI",
-                "Models",
             ]
         ),
         .testTarget(

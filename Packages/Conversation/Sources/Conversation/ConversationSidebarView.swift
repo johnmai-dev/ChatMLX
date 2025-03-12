@@ -5,14 +5,19 @@
 //  Created by John Mai on 2025/2/21.
 //
 
-import Models
+import Database
 import Shimmer
 import SwiftUI
+import SwiftUIIntrospect
 import UltraUI
 
 struct ConversationSidebarView: View {
-    @Binding var conversations: [Conversation]
+    var conversations: [Conversation]
     @Binding var selectedConversation: Conversation?
+
+    @Environment(ConversationStore.self) var conversationStore
+
+    @State var proxy: ScrollViewProxy?
 
     var body: some View {
         VStack(spacing: 16) {
@@ -29,31 +34,60 @@ struct ConversationSidebarView: View {
                             .repeatForever(autoreverses: false))
             }
             .shadow()
-
-            List {
-                ForEach(conversations) { conversation in
-                    item(conversation: conversation)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    Color.clear
+                        .frame(width: 0, height: 0)
+                        .id("top")
+                    LazyVStack(spacing: 4) {
+                        ForEach(conversations, id: \.id) { conversation in
+                            item(conversation: conversation)
+                        }
+                    }
+                    .padding(.horizontal, 6)
                 }
+                .onChange(of: conversations) { oldValue, newValue in
+                    if oldValue.count < newValue.count {
+                        withAnimation {
+                            proxy.scrollTo("top", anchor: .top)
+                        }
+                    }
+                }
+                .scrollContentBackground(.hidden)
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
+        }
+        .task {
+            do {
+                try await self.conversationStore.loadConversations()
+            } catch {
+                print("Failed to load conversations: \(error)")
+            }
+
         }
     }
 
     @ViewBuilder
     func item(conversation: Conversation) -> some View {
         Button(action: {
-            selectedConversation = conversation
+            Task{
+                do {
+                    try await conversationStore.switchToConversation(conversation)
+                } catch {
+                    print("Failed to switch to conversation: \(error)")
+                }
+            }
+
         }) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text(conversation.title)
+                    Text(conversation.titleUnwrapped)
                         .font(.headline)
                         .lineLimit(1)
+                        .help(conversation.titleUnwrapped)
 
                     Spacer()
 
-                    Text(conversation.updatedTime.formatted())
+                    Text(conversation.updatedAt.shortFormatted())
                         .font(.caption)
                         .foregroundStyle(.secondary)
 
@@ -70,7 +104,7 @@ struct ConversationSidebarView: View {
             .padding(16)
         }
         .buttonStyle(
-            UltraSidebarButtonStyle(conversation == selectedConversation)
+            UltraSidebarButtonStyle(conversation.id == selectedConversation?.id)
         )
 
     }

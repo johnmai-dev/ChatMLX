@@ -1,12 +1,14 @@
-import Models
 //
 //  ConversationView.swift
 //  Conversation
 //
 //  Created by John Mai on 2025/2/21.
 //
+
+import Database
 import SwiftUI
 import UltraUI
+import Utilities
 
 public struct ConversationView: View {
     @State private var prompt = AttributedString("")
@@ -18,54 +20,50 @@ public struct ConversationView: View {
     public var body: some View {
         @Bindable var conversationStore = conversationStore
 
-        UltraNavigationSplitView {
+        UltraNavigationSplitView(showDivider: conversationStore.selectedConversation != nil) {
             ConversationSidebarView(
-                conversations: $conversationStore.conversations,
+                conversations: conversationStore.conversations,
                 selectedConversation: $conversationStore.selectedConversation
             )
         } detail: {
             VStack(spacing: .zero) {
-                if let conversations = conversationStore.selectedConversation {
-                    ChatView()
+
+                if let conversation = conversationStore.selectedConversation {
+                    ConversationDetailView()
                         .frame(maxHeight: .infinity)
-                        .ultraNavigationTitle(conversations.title)
+                        .ultraNavigationTitle(conversation.titleUnwrapped)
                 } else {
                     GreetingView()
+                        .ultraNavigationTitle("")
                 }
 
-                PromptEditorView(prompt: $prompt) {
+                PromptEditorView().frame(maxWidth: 765)
+            }
 
-                } trailingToolbar: {
-
+            .ultraToolbar {
+                UltraToolbarItem(placement: .leading) {
+                    Button {
+                        Task {
+                            do {
+                                try await conversationStore.createConversation()
+                            } catch {
+                                print("Failed to create conversation: \(error)")
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .buttonStyle(.ultraIcon)
+                    
+                    SettingsLink {
+                        Image(systemName: "gear")
+                    }
+                    .buttonStyle(.ultraIcon)
                 }
-                .frame(maxWidth: 765)
+
             }
         }
         .frame(minWidth: 580, minHeight: 360)
-        .task {
-            conversationStore.conversations = [
-                .init(
-                    title: "Exploring SwiftUI and Vapor in Chat App Development",
-                    description:
-                        "This conversation delves into the nuances of using SwiftUI for building a chat interface, comparing it with UIKit, and considering Vapor for backend development. The dialogue showcases the developer's journey, from learning SwiftUI to planning a personal blog project, while highlighting the strengths of these frameworks.",
-                    model: .init(
-                        provider: .openAI,
-                        name: "gpt-4o",
-                        model: .id("gpt-4o")
-                    )
-                ),
-                .init(
-                    title: "Summary of the legal advisory dialogue",
-                    description:
-                        "This conversation is about legal counseling and covers questions, answers and related advice on legal issues. As specific conversation content was not provided, the above titles and descriptions are generic templates that are applicable to most legal counseling scenarios. For a more tailored title and description, please provide the specific conversation content to customize a version that more accurately reflects the topic and focus of the conversation.",
-                    model: .init(
-                        provider: .openAI,
-                        name: "gpt-4o",
-                        model: .id("gpt-4o")
-                    )
-                ),
-            ]
-        }
         .ultraWindowStyle()
     }
 }

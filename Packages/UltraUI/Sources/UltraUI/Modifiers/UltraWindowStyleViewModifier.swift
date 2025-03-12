@@ -18,6 +18,7 @@ struct UltraWindowStyleViewModifier: ViewModifier {
 
             window.setWindowBackgroundBlurRadius(utlraWindowBlur)
             window.backgroundColor = NSColor(utlraWindowBackgroundColor)
+//            window.backgroundColor = .clear
             window.toolbarStyle = .unified
 
             window.titlebarAppearsTransparent = true

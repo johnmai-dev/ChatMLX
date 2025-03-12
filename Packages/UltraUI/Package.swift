@@ -15,6 +15,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/STTextView", from: "2.0.0"),
         .package(url: "https://github.com/siteline/swiftui-introspect", from: "1.0.0"),
+        .package(url: "https://github.com/buh/CompactSlider", from: "2.0.7"),
+        
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,6 +25,7 @@ let package = Package(
             name: "UltraUI",
             dependencies: [
                 "STTextView",
+                "CompactSlider",
                 .product(name: "SwiftUIIntrospect", package: "swiftui-introspect"),
             ]
         ),

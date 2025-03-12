@@ -28,10 +28,10 @@ final class UltraOptionsWindowController: NSWindowController, Sendable {
         window.isFloatingPanel = true
         window.hidesOnDeactivate = false
         window.collectionBehavior = .canJoinAllSpaces
-        window.hasShadow = true
         window.isOpaque = false
         window.backgroundColor = .clear
-
+        window.hasShadow = true
+        
         self.init(window: window)
     }
 

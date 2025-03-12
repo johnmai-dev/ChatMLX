@@ -10,15 +10,24 @@ import SwiftUI
 @_silgen_name("CGSDefaultConnectionForThread")
 func CGSDefaultConnectionForThread() -> CGSConnection?
 
+//@_silgen_name("CGSSetWindowBackgroundBlurRadiusStyle")
+//func CGSSetWindowBackgroundBlurRadiusStyle(
+//    _ connection: CGSConnection, _ windowNumber: CGWindowID, _ style: Int
+//) -> OSStatus
+//
+//@_silgen_name("CGSSetWindowBackgroundBlurRadiusWithOpacityHint")
+//func CGSSetWindowBackgroundBlurRadiusWithOpacityHint(
+//    _ connection: CGSConnection, _ windowNumber: CGWindowID, _ radius: Int, _ hint: Int
+//) -> OSStatus
+
 @_silgen_name("CGSSetWindowBackgroundBlurRadius")
 @discardableResult
 func CGSSetWindowBackgroundBlurRadius(
     _ connection: CGSConnection, _ windowNumber: CGWindowID, _ radius: Int
-) -> CGError
+) -> OSStatus
 
 typealias CGSConnection = UInt32
 typealias CGWindowID = Int
-typealias CGError = Int32
 
 extension NSWindow {
     func setWindowBackgroundBlurRadius(_ radius: Int = 50) {

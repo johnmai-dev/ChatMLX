@@ -9,17 +9,16 @@
 /* Begin PBXBuildFile section */
 		523068232D71E6540069F093 /* Conversation in Frameworks */ = {isa = PBXBuildFile; productRef = 523068222D71E6540069F093 /* Conversation */; };
 		523068982D71F0FC0069F093 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 523068972D71F0FC0069F093 /* Settings */; };
-		52996F0C2D6F7787003AD246 /* HuggingfaceHub in Frameworks */ = {isa = PBXBuildFile; productRef = 52996F0B2D6F7787003AD246 /* HuggingfaceHub */; };
-		52996F0F2D6F77A2003AD246 /* HuggingfaceHub in Frameworks */ = {isa = PBXBuildFile; productRef = 52996F0E2D6F77A2003AD246 /* HuggingfaceHub */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5216AFDE2D7C5E1900556FD6 /* Database */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Database; path = Packages/Database; sourceTree = "<group>"; };
 		523067CF2D71DEE70069F093 /* UltraUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UltraUI; path = Packages/UltraUI; sourceTree = "<group>"; };
-		523067D42D71E5040069F093 /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Common; path = Packages/Common; sourceTree = SOURCE_ROOT; };
 		523068212D71E6390069F093 /* Conversation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Conversation; path = Packages/Conversation; sourceTree = "<group>"; };
-		523068242D71E68D0069F093 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Packages/Models; sourceTree = SOURCE_ROOT; };
 		523068672D71F09C0069F093 /* Settings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Settings; path = Packages/Settings; sourceTree = SOURCE_ROOT; };
 		526675422C85EDCB001EF113 /* ChatMLX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatMLX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		526DAC492D7DC21D00CD9270 /* Intelligence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Intelligence; path = Packages/Intelligence; sourceTree = "<group>"; };
+		527749362D807A3A00D420E4 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -31,8 +30,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52996F0F2D6F77A2003AD246 /* HuggingfaceHub in Frameworks */,
-				52996F0C2D6F7787003AD246 /* HuggingfaceHub in Frameworks */,
 				523068982D71F0FC0069F093 /* Settings in Frameworks */,
 				523068232D71E6540069F093 /* Conversation in Frameworks */,
 			);
@@ -51,9 +48,10 @@
 		526675392C85EDCB001EF113 = {
 			isa = PBXGroup;
 			children = (
-				523067D42D71E5040069F093 /* Common */,
+				527749362D807A3A00D420E4 /* Utilities */,
+				526DAC492D7DC21D00CD9270 /* Intelligence */,
+				5216AFDE2D7C5E1900556FD6 /* Database */,
 				523068212D71E6390069F093 /* Conversation */,
-				523068242D71E68D0069F093 /* Models */,
 				523068672D71F09C0069F093 /* Settings */,
 				523067CF2D71DEE70069F093 /* UltraUI */,
 				52996ED72D6F7437003AD246 /* ChatMLX */,
@@ -90,8 +88,6 @@
 			);
 			name = ChatMLX;
 			packageProductDependencies = (
-				52996F0B2D6F7787003AD246 /* HuggingfaceHub */,
-				52996F0E2D6F77A2003AD246 /* HuggingfaceHub */,
 				523068222D71E6540069F093 /* Conversation */,
 				523068972D71F0FC0069F093 /* Settings */,
 			);
@@ -374,14 +370,6 @@
 		523068972D71F0FC0069F093 /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Settings;
-		};
-		52996F0B2D6F7787003AD246 /* HuggingfaceHub */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HuggingfaceHub;
-		};
-		52996F0E2D6F77A2003AD246 /* HuggingfaceHub */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HuggingfaceHub;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

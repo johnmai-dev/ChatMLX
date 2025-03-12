@@ -1,6 +1,6 @@
 //
 //  MLXCommunityView.swift
-//  Sources
+//  Settings
 //
 //  Created by John Mai on 2025/2/27.
 //

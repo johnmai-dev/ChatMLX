@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UltraSidebarBackgroundView: View {
-    @Environment(\.utlraViewBackground) var utlraViewBackground
+    @Environment(\.ultraViewBackground) var utlraViewBackground
 
     var body: some View {
         ZStack {

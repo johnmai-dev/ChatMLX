@@ -16,6 +16,7 @@ extension ButtonStyle where Self == UltraButtonStyle {
 public struct UltraButtonStyle: ButtonStyle {
 
     @Environment(\.utlraSecondaryViewBackground) var utlraSecondaryViewBackground
+    @Environment(\.isEnabled) private var isEnabled
 
     @State private var isHovered = false
     private let cornerRadius: CGFloat
@@ -45,6 +46,7 @@ public struct UltraButtonStyle: ButtonStyle {
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .foregroundStyle(isEnabled ? .white : .gray)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .foregroundStyle(.white)

@@ -198,8 +198,15 @@ public struct UltraNavigationSplitView<Sidebar: View, Detail: View>: View {
             if isSidebarVisible {
                 ZStack(alignment: .trailing) {
                     sidebar()
+                        .safeAreaInset(edge: .top, alignment: .trailing, spacing: 0) {
+                            HStack {
+                                leadingToolbarItems()
+                            }
+                            .frame(height: 52)
+                            .padding(.horizontal)
+                        }
                         .frame(width: initialSidebarWidth)
-                        .padding(.top, 32)
+                        //                        .padding(.top, 32)
                         .background(UltraSidebarBackgroundView())
 
                     Rectangle()
@@ -252,6 +259,21 @@ public struct UltraNavigationSplitView<Sidebar: View, Detail: View>: View {
     }
 
     @ViewBuilder
+    func leadingToolbarItems() -> some View {
+        ForEach(state.toolbarItems.filter { $0.placement == .leading }) { item in
+            item.content
+        }
+
+        Button {
+            toggleSidebar()
+        } label: {
+            Image(systemName: "sidebar.leading")
+                .font(.title3)
+        }
+        .buttonStyle(.ultraIcon)
+    }
+
+    @ViewBuilder
     func header() -> some View {
         VStack(spacing: 0) {
             Spacer()
@@ -260,18 +282,8 @@ public struct UltraNavigationSplitView<Sidebar: View, Detail: View>: View {
                 if !isSidebarVisible {
                     Spacer()
                         .frame(width: 80)
-                }
 
-                Button {
-                    toggleSidebar()
-                } label: {
-                    Image(systemName: "sidebar.leading")
-                        .font(.title3)
-                }
-                .buttonStyle(.plain)
-
-                ForEach(state.toolbarItems.filter { $0.placement == .leading }) { item in
-                    item.content
+                    leadingToolbarItems()
                 }
 
                 Spacer()

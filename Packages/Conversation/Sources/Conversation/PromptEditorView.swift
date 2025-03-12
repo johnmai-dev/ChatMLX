@@ -5,25 +5,22 @@
 //  Created by John Mai on 2025/2/23.
 //
 
-import Models
+import Utilities
+import Database
+import Intelligence
 import STTextView
 import SwiftUI
 import UltraUI
 
-struct PromptEditorView<LeadingToolbar: View, TrailingToolbar: View>: View {
-    @Environment(\.utlraViewBackground) var utlraViewBackground
-
-    @Binding var prompt: AttributedString
-
-    @ViewBuilder var leadingToolbar: () -> LeadingToolbar
-    @ViewBuilder var trailingToolbar: () -> TrailingToolbar
+struct PromptEditorView: View {
+    @Environment(\.ultraViewBackground) var utlraViewBackground
+    @Environment(AppStore.self) var store
+    @Environment(ConversationStore.self) var conversationStore
 
     @State private var height: CGFloat = 36
     @State private var selection: NSRange? = nil
 
     @State private var models: [Model] = []
-
-    @State var model: Model? = nil
 
     @Environment(\.utlraRadius) var ultraRadius
 
@@ -32,9 +29,11 @@ struct PromptEditorView<LeadingToolbar: View, TrailingToolbar: View>: View {
     let maxHeight: CGFloat = 200
 
     var body: some View {
+        @Bindable var conversationStore = conversationStore
+
         VStack(spacing: .zero) {
             TextareaView(
-                text: $prompt,
+                text: $conversationStore.prompt,
                 placeholder: "What do you want to know?",
                 plugins: [
                     TextViewPlugin(
@@ -55,26 +54,32 @@ struct PromptEditorView<LeadingToolbar: View, TrailingToolbar: View>: View {
                     Image(systemName: "paperclip")
                 }.buttonStyle(.ultraIcon)
 
-                // 网络搜索
                 Button {
 
                 } label: {
                     Image(systemName: "network")
                 }.buttonStyle(.ultraIcon)
 
-                leadingToolbar()
                 Spacer()
-                trailingToolbar()
+
                 UltraPicker(
-                    options: models,
-                    selection: $model
+                    options: store.activeModels,
+                    selection: $conversationStore.model
                 )
 
                 Button("Send", systemImage: "paperplane.fill") {
-                    print("Send")
-                }.buttonStyle(.ultra)
-            }
+                    Task {
+                        do {
+                            try await conversationStore.send()
+                        } catch {
+                            print(error)
+                        }
+                    }
 
+                }
+                .disabled(conversationStore.prompt.characters.isEmpty || conversationStore.model == nil)
+                .buttonStyle(.ultra)
+            }
         }
         .padding()
         .background(utlraViewBackground)
@@ -82,11 +87,11 @@ struct PromptEditorView<LeadingToolbar: View, TrailingToolbar: View>: View {
         .shadow()
         .padding()
         .task {
-            //            do {
-            //                models = try HuggingfaceHubService().scanMLXModels()
-            //            } catch {
-            //                print(error)
-            //            }
+            do {
+                try store.loadModels()
+            } catch {
+                print(error)
+            }
         }
     }
 

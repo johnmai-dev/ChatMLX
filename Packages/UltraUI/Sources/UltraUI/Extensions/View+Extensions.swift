@@ -10,7 +10,7 @@ import SwiftUIIntrospect
 
 extension View {
     public func shadow() -> some View {
-        self.shadow(radius: 6)
+        self.shadow(radius: 8)
     }
 
     public func ultraWindowStyle() -> some View {
